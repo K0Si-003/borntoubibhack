@@ -13,7 +13,6 @@ const pathMap = [
   '/mes-recherches',
   '/FAQ'
 ];
-
 export default function Footer () {
   const [value, setValue] = React.useState('recents');
 
