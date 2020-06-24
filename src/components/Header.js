@@ -4,7 +4,6 @@ import '../styles/header.css';
 
 const Header = () => {
   const [openBurger, setOpenBurger] = useState(false);
-
   const openBurgerMenu = () => {
     setOpenBurger(true);
   };
@@ -16,7 +15,7 @@ const Header = () => {
   return (
     <header className='header'>
       {/* Logo incomming  */}
-      {/* <a href='/'><img src={logo} alt=' logo-valiris' className='logo-header' /></a> */}
+      {/* <a href='/'><img src={logo} alt='logo' className='logo-header' /></a> */}
       <div className='right-header-container'>
         <Navbar handleOpen={openBurgerMenu} handleClose={closeBurgerMenu} show={openBurger} />
       </div>

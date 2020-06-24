@@ -19,7 +19,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-
         <Switch>
           <Route exact path='/'><Home /></Route>
           <Route exact path='/annonces'><Ads /></Route>
