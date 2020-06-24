@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Ads from './components/Ads';
-import AdsItemSmall from './components/AdsItemSmall';
+import AdsItem from './components/AdsItem';
 import Favorites from './components/Favorites';
 import FAQ from './components/FAQ';
 
@@ -19,11 +19,11 @@ function App() {
     <Router>
       <div className="App">
         <h1>Test</h1>
-        <AdsItemSmall />
+        <Ads />
         <Switch>
           <Route exact path='/'><Home /></Route>
           <Route exact path='/annonces'><Ads /></Route>
-          <Route exact path='/annonces/:id' render={(routeProps) => <AdsItemSmall {...routeProps} />} />
+          <Route exact path='/annonces/:id' render={(routeProps) => <AdsItem {...routeProps} />} />
           <Route exact path='/mes-recherches'><Favorites /></Route>
           <Route exact path='/FAQ'><FAQ /></Route>
         </Switch>
