@@ -8,6 +8,7 @@ import Ads from './components/Ads';
 import AdsItem from './components/AdsItem';
 import Favorites from './components/Favorites';
 import FAQ from './components/FAQ';
+import Searchbar from './components/Searchbar';
 
 firebase.firestore().collection('times').add({
   title: 'Rubiks Cube',
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/mes-recherches'><Favorites /></Route>
           <Route exact path='/FAQ'><FAQ /></Route>
         </Switch>
+        <Searchbar />
       </div>
     </Router>
   );
