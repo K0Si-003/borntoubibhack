@@ -19,7 +19,6 @@ function App() {
     <Router>
       <div className="App">
         <h1>Test</h1>
-        <Ads />
         <Switch>
           <Route exact path='/'><Home /></Route>
           <Route exact path='/annonces'><Ads /></Route>
