@@ -1,0 +1,121 @@
+.search-bar {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.search-bar input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    padding: 15px 20px 10px 10px;
+    outline: none;
+    background-size: 24px;
+    color: #005C89;
+    font-family: 'Nunito', serif;
+    box-shadow: 0 8px 16px rgba(181, 180, 170, 0.4);
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+
+.search-bar input[type=text]:focus {
+    transform: scale(1.025);
+    transition: 0.4s;
+}
+
+
+.search-bar input[type=text]::placeholder {
+    color: rgba(0, 92, 137, 0.4);
+    font-family: 'Nunito', serif;
+}
+
+.search-bar ul {
+    position: absolute;
+    list-style-type: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    width: 35%;
+}
+
+.search-bar ul li {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.search-bar-place ul li:hover,
+.search-bar-specialty ul li:hover {
+    background-color: #bde8fd;
+}
+
+
+.search-bar-place ul,
+.search-bar-specialty ul{
+    position: absolute;
+    list-style-type: none;
+    background-color: white;
+    width: 38%;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.search-bar-place ul li {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.search-bar-place ul li:hover,
+.search-bar-specialty ul li:hover {
+    background-color: #bde8fd;
+}
+
+.search-label-place,
+.search-label-specialty {
+    width: 100%;
+}
+
+.main-search {
+    padding-bottom: 100px;
+}
+
+.search-icon {
+    position: relative;
+    top: 10px;
+    right: 45px;
+    background: none;
+    border: none;
+    color: #02a2ef;
+    font-size: 24px;
+}
+
+.location-icon {
+    position: relative;
+    top: 10px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: #02a2ef;
+    font-size: 24px;
+}
+
+.input-submit {
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid #02a2ef;
+    font-weight: bold;
+    color: #02a2ef;
+    width: 100px;
+    background-color: white;
+    font-family: 'Nunito', serif;
+    cursor: pointer;
+}
