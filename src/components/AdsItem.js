@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import firebase from '../firebase';
+import Footer from './Footer';
 
 export default function AdsItem(props) {
 
@@ -13,6 +14,11 @@ useEffect(() => {
   })}, [currentId])
 
 return (
-<div>{ad.firstname}</div>
+  <div>
+    <h1>{ad.firstname}</h1>
+    <Footer/>
+</div>
+
+
 );
 }

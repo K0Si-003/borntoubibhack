@@ -1,10 +1,12 @@
 import React from 'react';
+import Footer from './Footer';
 
 const Favorites = () => {
-  return (
-      <div>
-          
-      </div>
-  );
+    return (
+        <div>
+          <Footer/>
+        </div>
+    );
 };
+
 export default Favorites;
