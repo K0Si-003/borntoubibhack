@@ -1,6 +1,12 @@
 import React from 'react';
 import './App.css';
 import firebase from './firebase';
+import { Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Ads from './components/Ads';
+import AdsItem from './components/AdsItem';
+import Favorites from './components/Favorites';
+import FAQ from './components/FAQ';
 
 firebase.firestore().collection('times').add({
   title: 'Rubiks Cube',
@@ -9,11 +15,17 @@ firebase.firestore().collection('times').add({
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Born toubib hack !!</h1>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path='/'><Home /></Route>
+          <Route exact path='/annonces'><Ads /></Route>
+          <Route exact path='/annonces/:id' render={(routeProps) => <AdsItem {...routeProps} />} />
+          <Route exact path='/mes-recherches'><Favorites /></Route>
+          <Route exact path='/FAQ'><FAQ /></Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
