@@ -1,5 +1,11 @@
 import React from 'react';
 import './App.css';
+import firebase from './firebase';
+
+firebase.firestore().collection('times').add({
+  title: 'Rubiks Cube',
+  time_seconds: 45
+})
 
 function App() {
   return (
