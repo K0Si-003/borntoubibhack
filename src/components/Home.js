@@ -1,14 +1,12 @@
-import React from 'react';
-import Footer from './Footer';
+import React from "react";
+import Searchbar from "../components/Searchbar";
 
 const Home = () => {
-    return (
-        <div>
-          <Footer/> 
-        </div>
-    );
+  return (
+    <div>
+      <Searchbar />
+    </div>
+  );
 };
 
 export default Home;
-
-
