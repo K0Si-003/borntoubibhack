@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import firebase from './firebase';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Ads from './components/Ads';
