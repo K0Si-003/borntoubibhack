@@ -22,7 +22,7 @@ export default function Footer () {
 
   return (
     <footer>
-      <BottomNavigation style={{ backgroundColor: '#139FDF' }} value={value} onChange={handleChange} showLabels>
+      <BottomNavigation style={{ backgroundColor: '#0596DE' }} value={value} onChange={handleChange} showLabels>
         <BottomNavigationAction style={{ color: 'white' }} label='Accueil' value='accueil' icon={<HomeIcon />} component={Link} to={pathMap[0]} />
         <BottomNavigationAction style={{ color: 'white' }} label='Mes recherches' value='mes recherches' icon={<FaceIcon />} component={Link} to={pathMap[1]} />
         <BottomNavigationAction style={{color: 'white' }} label='FAQ' value='faq' icon={<InfoIcon />} component={Link} to={pathMap[2]} />
