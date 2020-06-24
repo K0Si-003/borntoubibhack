@@ -9,7 +9,7 @@ import Ads from './components/Ads';
 import AdsItem from './components/AdsItem';
 import Favorites from './components/Favorites';
 import FAQ from './components/FAQ';
-import Searchbar from './components/Searchbar';
+import Footer from './components/Footer';
 
 firebase.firestore().collection('times').add({
   title: 'Rubiks Cube',
@@ -20,6 +20,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+      <Header />
         <Switch>
           <Route exact path='/'><Home /></Route>
           <Route exact path='/annonces'><Ads /></Route>
@@ -27,8 +28,7 @@ function App() {
           <Route exact path='/mes-recherches'><Favorites /></Route>
           <Route exact path='/FAQ'><FAQ /></Route>
         </Switch>
-        <Header />
-        <Searchbar />
+      <Footer />
       </div>
     </Router>
   );
