@@ -1,5 +1,5 @@
 .search-bar {
-    width: 40%;
+    width: 80%;
     margin: auto;
     display: flex;
 }
@@ -39,18 +39,23 @@
     list-style-type: none;
     background-color: white;
     border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    width: 35%;
 }
 
 .search-bar ul li {
     width: 100%;
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .search-bar-place ul li:hover,
 .search-bar-specialty ul li:hover {
     background-color: #bde8fd;
 }
+
 
 .search-bar-place ul,
 .search-bar-specialty ul{
