@@ -8,8 +8,8 @@ const Ads = () => {
 
   useEffect(() => {
     const loadAd = firebase.firestore().collection('adds').onSnapshot(s => {
-      setAds(s.docs.map(task => {
-        return {id: task.id, ...task.data()}
+      setAds(s.docs.map(ad => {
+        return {id: ad.id, ...ad.data()}
       }))
     })
 
