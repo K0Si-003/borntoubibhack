@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { TextField, Checkbox } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
+import Checkbox from '@material-ui/core/Checkbox';
 import MenuItem from '@material-ui/core/MenuItem';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 
 const months = [
   {
@@ -53,7 +56,7 @@ class AdvancedSearch extends Component {
       date: new Date(),
       day: null,
       month: null,
-      logement: false
+      accomodation: false
 
     }
 
@@ -69,8 +72,12 @@ class AdvancedSearch extends Component {
     });
   }
 
-  handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value })
+  handleChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({ [name]: value })
   }
 
 
@@ -98,7 +105,6 @@ class AdvancedSearch extends Component {
               ? (
                 <div className="inputs-advanced-search" >
                   {this.props.component}
-
                   <TextField
                     className='date-input advanced-search'
                     id='starting-date'
@@ -115,11 +121,7 @@ class AdvancedSearch extends Component {
                       inputProps: { min: this.getFullDate() }
                     }}
                   />
-                  <Checkbox
-                    value={this.state.logement}
-                    inputProps={{ 'aria-label': 'Checkbox A' }}
 
-                  />
 
                   <TextField
                     className='month-input advanced-search'
@@ -131,12 +133,19 @@ class AdvancedSearch extends Component {
                     value={this.state.month}
                     helperText="Nombre de mois"
                   >
+
                     {months.map((option) => (
                       <MenuItem key={option.duration} value={option.duration}>
                         {option.duration}
                       </MenuItem>
                     ))}
                   </TextField>
+                  <FormControlLabel
+                    value="top"
+                    control={<Checkbox color="primary" />}
+                    label='Avec logement '
+                    labelPlacement="top"
+                  />
 
                 </div>
               )
