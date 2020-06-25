@@ -10,7 +10,7 @@ const Ads = (props) => {
   const duration = props.datas.duration;
   const specialty = props.datas.specialty;
   const departement = props.datas.place;
-  const accomodation = true;
+  const accomodation = props.datas.accomodation;
   const date = props.datas.date
   const start_date_timestamp_filter = firebase.firestore.Timestamp.fromDate(
     new Date(date));
