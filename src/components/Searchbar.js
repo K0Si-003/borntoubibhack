@@ -3,6 +3,7 @@ import departmentsList from '../departments.json';
 import specialtiesList from '../specialties.json';
 import AdvancedSearch from './AdvancedSearch';
 import '../styles/searchbar.css';
+import Favorite from './Favorite'
 
 const departments = departmentsList.map(department => `${department.departmentName}, ${department.regionName}`);
 const specialties = specialtiesList.map(list => `${list.specialty}`);
@@ -12,6 +13,7 @@ const Searchbar = () => {
     const [suggestionsPlaces, setSuggestionsPlaces] = useState([])
     const [specialty, setSpecialty] = useState('')
     const [suggestionsSpecialties, setSuggestionsSpecialties] = useState([])
+    const [favoris, setFavoris] = useState([]);
 
     /* Autocomplete for specialty */
     const handleSpecialtyChanged = (e) => {
@@ -24,7 +26,6 @@ const Searchbar = () => {
         setSpecialty(value);
         setSuggestionsSpecialties(autocompletions)
     }
-
     const renderSpecialtiesSuggestions = () => {
         if (suggestionsSpecialties.length === 0) {
             return null;
@@ -35,10 +36,14 @@ const Searchbar = () => {
             </ul>
         );
     }
-
     const handleSpecialtiesSelected = (value) => {
         setSpecialty(value);
         setSuggestionsSpecialties([]);
+    }
+
+    const getValue = (e) => {
+        setFavoris({ speciality: specialty, suggestionsPlaces: [...suggestionsPlaces, suggestionsPlaces] })
+        console.log(favoris)
     }
 
     /* Autocomplete for location */
@@ -74,43 +79,54 @@ const Searchbar = () => {
     }
 
     return (
-        <form className='search-bar' onSubmit={(e) => handleSubmit(e)}>
-            <div className='main-search'>
-                <label className='search-label-specialty' htmlFor='search-input'>
-                    <input
-                        className='search-input-specialty'
-                        type='text' placeholder='Ma spécialité'
-                        value={specialty}
-                        onChange={handleSpecialtyChanged}
+        <>
+
+            <form className='search-bar' onSubmit={(e) => handleSubmit(e)}>
+                {favoris.specialty}  {favoris.suggestionsPlaces}
+                <div className='main-search'>
+
+                    <label className='search-label-specialty' htmlFor='search-input'>
+                        <input
+                            className='search-input-specialty'
+                            type='text' placeholder='Ma spécialité'
+                            value={specialty}
+                            name={specialty.value}
+                            onChange={handleSpecialtyChanged}
                         />
                         {renderSpecialtiesSuggestions()}
                     </label>
 
                     <label className='search-label-place' htmlFor='search-input'>
-                    <input
-                        className='localization-input-specialty'
-                        type='text' placeholder='Mon département'
-                        value={place}
-                        onChange={handlePlaceChanged}
-                    />
+                        <input
+                            className='localization-input-specialty'
+                            type='text' placeholder='Mon département'
+                            value={place}
+                            onChange={handlePlaceChanged}
+                        />
                         {renderPlacesSuggestions()}
                     </label>
                     <input
                         type='submit'
                         className='input-submit submit-desktop'
-                        value='Rechercher' 
+                        value='Rechercher'
                     />
-            </div>
+                </div>
 
-            <div className='advanced-search'>
-                <AdvancedSearch />
-                <input
+                <div className='advanced-search'>
+                    <AdvancedSearch component={<Favorite addToFavorite={() => getValue()} />} />
+                    <input
                         type='submit'
                         className='input-submit submit-mobile'
-                        value='Rechercher' 
-                />
-            </div>
-        </form>
+                        value='Rechercher'
+                    />
+
+                </div>
+
+
+            </form>
+
+
+        </>
     );
 };
 

@@ -1,12 +1,12 @@
 import React from 'react';
 
-//const data = ['dsfsdsdg', 'sdfgsdgds']
-const Favorite = (props) => {
 
+
+const Favorite = (props) => {
     return (
         <main>
-
-            <span><i className="fa fa-bell" aria-hidden="true" style={{ color: "azure" }}></i></span>
+            <span className="span-cloche">
+                <i className="fa fa-heart fa-2x " aria-hidden="true" onClick={props.addToFavorite}></i></span>
         </main>
     );
 }
