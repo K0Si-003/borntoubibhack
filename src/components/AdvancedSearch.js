@@ -53,11 +53,9 @@ class AdvancedSearch extends Component {
       showMenu: false,
       date: new Date(),
       day: null,
-      month: null
     }
     
     this.showMenu = this.showMenu.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.getFullDate = this.getFullDate.bind(this);
   }
   
@@ -68,11 +66,6 @@ class AdvancedSearch extends Component {
       showMenu: !this.state.showMenu,
     });
   }
-
-  handleChange(e) {
-    this.setState({[e.target.name]: e.target.value})
-  }
-
 
   getFullDate() {
     const day = new Date().getDate();
@@ -103,8 +96,8 @@ class AdvancedSearch extends Component {
                     type='date'
                     variant='outlined'
                     name='date'
-                    onChange={(e) => this.handleChange(e)}
-                    value={this.state.date}
+                    onChange={(e) => this.props.handleChangeAdvanced(e)}
+                    value={this.props.datas.date}
                     InputLabelProps={{
                     shrink: true
                     }}
@@ -118,9 +111,9 @@ class AdvancedSearch extends Component {
                         id="month"
                         select
                         label="Durée"
-                        name='month'
-                        onChange={(e) => this.handleChange(e)}
-                        value={this.state.month}
+                        name='duration'
+                        onChange={(e) => this.props.handleChangeAdvanced(e)}
+                        value={this.props.datas.duration}
                         helperText="Nombre de mois"
                     >
                     {months.map((option) => (

@@ -1,117 +1,71 @@
-import React, { useState } from 'react';
-import departmentsList from '../departments.json';
-import specialtiesList from '../specialties.json';
+import React, { useState, createContext, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import AdvancedSearch from './AdvancedSearch';
-import '../styles/searchbar.css';
 
-const departments = departmentsList.map(department => `${department.departmentName}, ${department.regionName}`);
-const specialties = specialtiesList.map(list => `${list.specialty}`);
 
-const Searchbar = () => {
-    const [place, setPlace] = useState('')
-    const [suggestionsPlaces, setSuggestionsPlaces] = useState([])
-    const [specialty, setSpecialty] = useState('')
-    const [suggestionsSpecialties, setSuggestionsSpecialties] = useState([])
 
-    /* Autocomplete for specialty */
-    const handleSpecialtyChanged = (e) => {
-        const value = e.target.value;
-        let autocompletions = [];
-        if (value.length > 0) {
-            const regex = new RegExp(`^${value}`, 'i');
-            autocompletions = specialties.sort().filter(v => regex.test(v));
-        }
-        setSpecialty(value);
-        setSuggestionsSpecialties(autocompletions)
-    }
+export const Searchbar = (props) => {
+//   const renderPlacesSuggestions = () => {
+//     const { suggestionsPlaces } = this.state;
+//     if (suggestionsPlaces.length === 0) {
+//       return null;
+//     }
+//     return (
+//       <ul className='autocomplete'>
+//         {suggestionsPlaces.slice(0, 5).map((item, index) => <li key={index} onClick={() => this.handleSuggestionPlaces(item)}>{item}</li>)}
+//       </ul>
+//     );
+//   }
 
-    const renderSpecialtiesSuggestions = () => {
-        if (suggestionsSpecialties.length === 0) {
-            return null;
-        }
-        return (
-            <ul className='autocomplete'>
-                {suggestionsSpecialties.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSpecialtiesSelected(item)}>{item}</li>)}
-            </ul>
-        );
-    }
+  return (
+    <form className='search-bar' onSubmit={(e) => props.handleSubmit(e)}>
+      <div className='main-search'>
+        <label className='search-label-specialty' htmlFor='search-input'>
+          <input
+            className='search-input-specialty'
+            type='text' placeholder='Ma spécialité'
+            value={props.datas.specialty}
+            onChange={props.handleSpecialtyChanged}
+            required
+          />
+          <ul className='autocomplete'>
+        {props.datas.suggestionsSpecialties.slice(0, 5).map((item, index) => <li key={index} onClick={() => props.handleSpecialtiesSelected(item)}>{item}</li>)}
+      </ul>
 
-    const handleSpecialtiesSelected = (value) => {
-        setSpecialty(value);
-        setSuggestionsSpecialties([]);
-    }
+        </label>
 
-    /* Autocomplete for location */
-    const handlePlaceChanged = (e) => {
-        const value = e.target.value;
-        let autocompletions = [];
-        if (value.length > 0) {
-            const regex = new RegExp(`^${value}`, 'i');
-            autocompletions = departments.sort().filter(v => regex.test(v));
-        }
-        setPlace(value);
-        setSuggestionsPlaces(autocompletions)
-    }
+        <label className='search-label-place' htmlFor='search-input'>
+          <input
+            className='localization-input-specialty'
+            type='text' placeholder='Mon département'
+            value={props.datas.place}
+            onChange={props.handlePlaceChanged}
+          />
+      <ul className='autocomplete'>
+        {props.datas.suggestionsPlaces.slice(0, 5).map((item, index) => <li key={index} onClick={() => props.handleSuggestionPlaces(item)}>{item}</li>)}
+      </ul>
+        </label>
+        <input
+          type='submit'
+          className='input-submit submit-desktop'
+          value='Rechercher'
+        />
+      </div>
 
-    const renderPlacesSuggestions = () => {
-        if (suggestionsPlaces.length === 0) {
-            return null;
-        }
-        return (
-            <ul className='autocomplete'>
-                {suggestionsPlaces.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSuggestionPlaces(item)}>{item}</li>)}
-            </ul>
-        );
-    }
-
-    const handleSuggestionPlaces = (value) => {
-        setPlace(value);
-        setSuggestionsPlaces([]);
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }
-
-    return (
-        <form className='search-bar' onSubmit={(e) => handleSubmit(e)}>
-            <div className='main-search'>
-                <label className='search-label-specialty' htmlFor='search-input'>
-                    <input
-                        className='search-input-specialty'
-                        type='text' placeholder='Ma spécialité'
-                        value={specialty}
-                        onChange={handleSpecialtyChanged}
-                        />
-                        {renderSpecialtiesSuggestions()}
-                    </label>
-
-                    <label className='search-label-place' htmlFor='search-input'>
-                    <input
-                        className='localization-input-specialty'
-                        type='text' placeholder='Mon département'
-                        value={place}
-                        onChange={handlePlaceChanged}
-                    />
-                        {renderPlacesSuggestions()}
-                    </label>
-                    <input
-                        type='submit'
-                        className='input-submit submit-desktop'
-                        value='Rechercher' 
-                    />
-            </div>
-
-            <div className='advanced-search'>
-                <AdvancedSearch />
-                <input
-                        type='submit'
-                        className='input-submit submit-mobile'
-                        value='Rechercher' 
-                />
-            </div>
-        </form>
-    );
+      <div className='advanced-search'>
+        <AdvancedSearch 
+          datas={props.datas}
+          handleChangeAdvanced={props.handleChangeAdvanced}
+         />
+        <Link to="/annonces">
+        <input
+          type='submit'
+          className='input-submit submit-mobile'
+          value='Rechercher'
+        />
+        </Link>
+      </div>
+    </form>
+  );
 };
-
 export default Searchbar;
