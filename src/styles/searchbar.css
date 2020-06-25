@@ -149,7 +149,7 @@
 }
 
 /* MEDIA QUERIES Mobile */
-@media screen and (max-width: 900px)  {
+@media screen and (min-width: 700px) and (max-width: 900px)  {
   .search-bar {
       flex-wrap: wrap;
     }
@@ -162,8 +162,62 @@
   }
   .search-bar input[type=text] {
     padding-right: 20px;
+    width: 65vw;
     margin-bottom: 10%;
 }
+
+  .search-icon {
+    margin-left: -10%;
+  }
+
+  .location-icon {
+    margin-left: -10%;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 700px)  {
+  .search-bar {
+      flex-wrap: wrap;
+    }
+
+  #searchbutton {
+    margin:  auto ;
+    width: 20vw;
+    height: 5vh;
+    font-size: 1.2em;
+  }
+  .search-bar input[type=text] {
+    padding-right: 20px;
+    width: 65vw;
+    margin-bottom: 10%;
+}
+
+  .search-icon {
+    margin-left: -10%;
+  }
+
+  .location-icon {
+    margin-left: -10%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+  .search-bar {
+    flex-wrap: wrap;
+  }
+
+  #searchbutton {
+    margin:  auto ;
+    width: 65vw;
+    height: 5vh;
+    font-size: 1.2em;
+  }
+  .search-bar input[type=text] {
+    padding-right: 20px;
+    width: 65vw;
+    margin-bottom: 10%;
+  }
 
   .search-icon {
     margin-left: -10%;
