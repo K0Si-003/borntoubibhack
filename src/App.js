@@ -97,12 +97,6 @@ class App extends React.Component {
   }
 
   handleClick = (e) => {
-    localStorage.setItem('place', this.state.place);
-    localStorage.setItem('specialty', this.state.specialty);
-    localStorage.setItem('date', this.state.date);
-    localStorage.setItem('duration', this.state.duration);
-
-
     this.setState({tabLocalStorage:
       [...this.state.tabLocalStorage,
       {place: this.state.place,
@@ -110,7 +104,7 @@ class App extends React.Component {
       date: this.state.date,
       duration: this.state.duration}]
     })
-    localStorage.setItem('localSearch', this.state.tabLocalStorage);
+    localStorage.setItem('localSearch', JSON.stringify(this.state.tabLocalStorage));
   }
 
   render() {
