@@ -24,7 +24,16 @@ const Ads = (props) => {
  
     return (
         <main className='ads ads-container'>
-            <Searchbar />
+            <Searchbar 
+              datas={props.datas} 
+              handleSpecialtyChanged={props.handleSpecialtyChanged}
+              renderSpecialtiesSuggestion={props.renderSpecialtiesSuggestion}
+              handleSpecialtiesSelected={props.handleSpecialtiesSelected}
+              handlePlaceChanged={props.handlePlaceChanged}
+              renderSpecialtiesSuggestions={props.renderSpecialtiesSuggestions}
+              handleSuggestionPlaces={props.handleSuggestionPlaces}
+              handleSubmit={props.handleSubmit}
+              handleChangeAdvanced={props.handleChangeAdvanced}/>
             {ads.map((ad)=> <AdsItemSmall ad={ad}/>)}
         </main>
     );
