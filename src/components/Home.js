@@ -22,7 +22,8 @@ const Home = () => {
 
   return (
     <main>
-      <div className='textintro'>
+      <div className='textintro' 
+      style={{fontFamily: 'Nunito', color: '#0596DE'}}>
         <Typewriter string='Toi aussi, jeune remplaçant...' speed={80} />
       </div>
       <Searchbar />
