@@ -257,7 +257,7 @@ const Ads = (props) => {
 
       return () => unsubscribe();
     }
-  }, []);
+  }, [accomodation, departement, duration, specialty]);
 
   return (
     <main>
