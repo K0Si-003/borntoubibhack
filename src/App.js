@@ -34,7 +34,8 @@ class App extends React.Component {
       suggestionsSpecialties: [],
       date: null,
       duration: null,
-      search: false
+      search: false,
+      tabLocalStorage: [{}]
     };
   }
 
@@ -100,6 +101,16 @@ class App extends React.Component {
     localStorage.setItem('specialty', this.state.specialty);
     localStorage.setItem('date', this.state.date);
     localStorage.setItem('duration', this.state.duration);
+
+
+    this.setState({tabLocalStorage:
+      [...this.state.tabLocalStorage,
+      {place: this.state.place,
+      specialty: this.state.specialty,
+      date: this.state.date,
+      duration: this.state.duration}]
+    })
+    localStorage.setItem('localSearch', this.state.tabLocalStorage);
   }
 
   render() {
