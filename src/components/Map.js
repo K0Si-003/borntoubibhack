@@ -3,12 +3,12 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import '../styles/map.css';
 
 const MapComponent = (ads) => {
-  const firstPosition = [45.8322560, 4.7753658];
+  const firstPosition = [46.71109, 1.7191036];
 
   return (
       <Map
         center={firstPosition}
-        zoom={7}
+        zoom={6}
       >
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
