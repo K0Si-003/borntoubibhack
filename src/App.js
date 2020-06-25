@@ -11,7 +11,6 @@ import AdsItem from './components/AdsItem';
 import Favorites from './components/Favorites';
 import FAQ from './components/FAQ';
 
-
 firebase.firestore().collection('times').add({
   title: 'Rubiks Cube',
   time_seconds: 45
