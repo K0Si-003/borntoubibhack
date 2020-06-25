@@ -23,7 +23,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/'><Home /></Route>
-          <Route exact path='/annonces'><Ads /></Route>
+          <Route exact path='/annonces' render={(routeProps ) => <Ads {...routeProps}/> }/>
           <Route exact path='/annonces/:id' render={(routeProps) => <AdsItem {...routeProps} />} />
           <Route exact path='/mes-recherches'><Favorites /></Route>
           <Route exact path='/FAQ'><FAQ /></Route>

@@ -16,6 +16,7 @@ import moment from "moment";
 
 export default function AdsItemSmall({ ad }) {
   const timestamp = ad.start_date.seconds;
+  console.log(ad.start_date)
   const start_date = moment.unix(timestamp).format("DD MMMM YYYY");
 
   return (
@@ -50,7 +51,7 @@ export default function AdsItemSmall({ ad }) {
                 className="picto-container"
                 style={{ backgroundImage: `url(${pictoDuration})` }}
               />
-              <p>Durée : {ad.duration} {ad.unit === "day" ? "jours" : "mois"}</p>
+              <p>Durée : {ad.duration_day ? `${ad.duration_day} jours` : `${ad.duration_month} mois`}</p>
             </div>
             <div className='ad-reccurent'>
             <span
