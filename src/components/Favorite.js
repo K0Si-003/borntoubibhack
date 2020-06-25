@@ -5,7 +5,6 @@ const Favorite = (props) => {
 
     return (
         <main>
-
             <span><i className="fa fa-bell" aria-hidden="true" style={{ color: "azure" }}></i></span>
         </main>
     );
