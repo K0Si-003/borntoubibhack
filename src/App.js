@@ -10,7 +10,6 @@ import Ads from './components/Ads';
 import AdsItem from './components/AdsItem';
 import Favorites from './components/Favorites';
 import FAQ from './components/FAQ';
-import Footer from './components/Footer';
 
 firebase.firestore().collection('times').add({
   title: 'Rubiks Cube',
