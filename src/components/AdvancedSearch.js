@@ -58,7 +58,6 @@ class AdvancedSearch extends Component {
     }
 
     this.showMenu = this.showMenu.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.getFullDate = this.getFullDate.bind(this);
   }
 
@@ -107,8 +106,8 @@ class AdvancedSearch extends Component {
                     type='date'
                     variant='outlined'
                     name='date'
-                    onChange={(e) => this.handleChange(e)}
-                    value={this.state.date}
+                    onChange={(e) => this.props.handleChangeAdvanced(e)}
+                    value={this.props.datas.date}
                     InputLabelProps={{
                       shrink: true
                     }}
@@ -117,7 +116,7 @@ class AdvancedSearch extends Component {
                     }}
                   />
                   <Checkbox
-                    value="checkedA"
+                    value={this.state.logement}
                     inputProps={{ 'aria-label': 'Checkbox A' }}
 
                   />
