@@ -6,7 +6,7 @@ import "../styles/Ads.css";
 const Ads = (props) => {
   const [ads, setAds] = useState([]);
   const specialty = "Ostéopathe";
-  const start_date_timestamp_filter = 1593583200;
+  const start_date_timestamp_filter = firebase.firestore.Timestamp.fromDate(new Date("2020-06-30"));
   console.log(start_date_timestamp_filter)
 
   useEffect(() => {
@@ -15,8 +15,8 @@ const Ads = (props) => {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
-        .where("specialty", "==", `${specialty}`)
-        .where("start_date", "==", `${start_date_timestamp_filter}`)
+        .where("specialty", "==", specialty)
+        .where("start_date", ">=", start_date_timestamp_filter)
         .onSnapshot((s) => {
           setAds(
             s.docs.map((ad) => {
