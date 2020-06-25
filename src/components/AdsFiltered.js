@@ -3,6 +3,8 @@ import firebase from "../firebase";
 import AdsItemSmall from "./AdsItemSmall";
 import "../styles/AdsFiltered.css";
 import Searchbar from "./Searchbar";
+import { Button } from "@material-ui/core";
+import { Link } from 'react-router-dom'
 
 const Ads = (props) => {
   console.log(props.datas)
@@ -10,7 +12,7 @@ const Ads = (props) => {
   const duration = props.datas.duration;
   const specialty = props.datas.specialty;
   const departement = props.datas.place;
- const accomodation = true;
+  const accomodation = true;
   const date = props.datas.date
   const start_date_timestamp_filter = firebase.firestore.Timestamp.fromDate(
     new Date(date));
@@ -264,17 +266,7 @@ const Ads = (props) => {
       {ads.length === 0 ? (
         <div className="ads no-results">
           <p>Aucun résultats pour votre recherche</p>
-          <p>Nouvelle recherche</p>
-          <Searchbar 
-            datas={props.datas} 
-            handleSpecialtyChanged={props.handleSpecialtyChanged}
-            renderSpecialtiesSuggestion={props.renderSpecialtiesSuggestion}
-            handleSpecialtiesSelected={props.handleSpecialtiesSelected}
-            handlePlaceChanged={props.handlePlaceChanged}
-            renderSpecialtiesSuggestions={props.renderSpecialtiesSuggestions}
-            handleSuggestionPlaces={props.handleSuggestionPlaces}
-            handleSubmit={props.handleSubmit}
-            handleChangeAdvanced={props.handleChangeAdvanced}/>
+          <Link to='/annonces' className='btn-new-search'>Nouvelle recherche</Link>
         </div>
       ) : (
         <div className="ads ads-container">
