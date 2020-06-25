@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
+import Searchbar from "../components/Searchbar";
 
 const Home = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div>
+      <Searchbar />
+    </div>
+  );
 };
 
 export default Home;
-
-
