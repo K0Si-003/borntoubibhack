@@ -2,23 +2,32 @@ import React from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import '../styles/map.css';
 
-const MapComponent = () => {
-  const position = [45.8322560, 4.7753658];
+const MapComponent = (ads) => {
+  const firstPosition = [45.8322560, 4.7753658];
+
   return (
-    <Map center={position} zoom={14}>
-      <TileLayer
-        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      />
-      <Marker
-        position={position}
+      <Map
+        center={firstPosition}
+        zoom={7}
       >
-        <Popup>
-          Mich Mich le médecin. <br /> 470 Route de Saint Didier 69760 Limonest.
-        </Popup>
-      </Marker>
-    </Map>
+        <TileLayer
+          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {ads.adsDetails.map(ad => {
+          return (
+            <Marker
+              key={ad.id}
+              position={[ad.localisation.Rc, ad.localisation.Ac]}
+            >
+              <Popup>
+                {ad.firstname + ' ' + ad.lastname}. <br /> {ad.specialty}.
+            </Popup>
+            </Marker>
+          )
+        })}
+      </Map>
   );
 };
 
-export default MapComponent;  
+export default MapComponent;
