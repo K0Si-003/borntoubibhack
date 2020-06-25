@@ -35,11 +35,13 @@ export const Searchbar = (props) => {
                         {props.datas.suggestionsPlaces.slice(0, 5).map((item, index) => <li key={index} onClick={() => props.handleSuggestionPlaces(item)}>{item}</li>)}
                     </ul>
                 </label>
+                <Link to='/annonces/search'>
                 <input
                     type='submit'
                     className='input-submit submit-desktop'
                     value='Rechercher'
                 />
+                </Link>
             </div>
 
             <div className='advanced-search'>
@@ -47,7 +49,7 @@ export const Searchbar = (props) => {
                     datas={props.datas}
                     handleChangeAdvanced={props.handleChangeAdvanced}
                 />
-                <Link to="/annonces">
+                <Link to="/annonces/search">
                     <input
                         type='submit'
                         className='input-submit submit-mobile'
