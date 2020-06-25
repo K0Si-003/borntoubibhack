@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import AdvancedSearch from './AdvancedSearch';
 

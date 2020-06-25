@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import firebase from "../firebase";
 import AdsItemSmall from "./AdsItemSmall";
 import "../styles/AdsFiltered.css";
-import Searchbar from "./Searchbar";
-import { Button } from "@material-ui/core";
 import { Link } from 'react-router-dom'
 
 const Ads = (props) => {
