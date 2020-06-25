@@ -98,11 +98,17 @@ const Searchbar = () => {
                     <input
                         type='submit'
                         className='input-submit submit-desktop'
-                        value='Rechercher' />
+                        value='Rechercher' 
+                    />
             </div>
 
             <div className='advanced-search'>
                 <AdvancedSearch />
+                <input
+                        type='submit'
+                        className='input-submit submit-mobile'
+                        value='Rechercher' 
+                />
             </div>
         </form>
     );
