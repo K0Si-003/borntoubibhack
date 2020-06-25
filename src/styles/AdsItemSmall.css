@@ -1,5 +1,5 @@
 .card {
-  max-width: 345px;
+  width: 300px;
   margin: 15px;
   height: fit-content;
 }
@@ -27,4 +27,8 @@
 .card .ad-info .start-date, .card .ad-info .ad-duration, .card .ad-info .ad-reccurent {
   display: flex;
   align-items: flex-end;
+}
+
+.link-ad:visited {
+  color: #3f51b5;
 }

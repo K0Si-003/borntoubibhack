@@ -13,6 +13,7 @@ import "../styles/AdsItemSmall.css";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
+
 export default function AdsItemSmall({ ad }) {
   const timestamp = ad.start_date.seconds;
   const start_date = moment.unix(timestamp).format("DD MMMM YYYY");
@@ -61,12 +62,14 @@ export default function AdsItemSmall({ ad }) {
           </div>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Link to={`/annonces/${ad.id}`}>
+      <CardActions className = 'CardActions'>
+        
           <Button size="small" color="primary">
+          <Link to={`/annonces/${ad.id}`} className='link-ad'>
             Voir l'annonce
+            </Link>
           </Button>
-        </Link>
+        
         <Button size="small" color="primary">
           Voir carte
         </Button>

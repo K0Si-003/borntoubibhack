@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import firebase from '../firebase';
 import AdsItemSmall from './AdsItemSmall';
-import Footer from './Footer';
 import '../styles/Ads.css';
 
 
