@@ -16,7 +16,6 @@ import moment from "moment";
 
 export default function AdsItemSmall({ ad }) {
   const timestamp = ad.start_date.seconds;
-  console.log(ad.start_date)
   const start_date = moment.unix(timestamp).format("DD MMMM YYYY");
 
   return (
