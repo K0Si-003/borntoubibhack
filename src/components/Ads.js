@@ -8,7 +8,7 @@ const Ads = (props) => {
   const duration = '1 mois';
   const specialty = "";
   const departement = "";
-  const start_date_timestamp_filter = firebase.firestore.Timestamp.fromDate(new Date("2020-06-30"));
+  const start_date_timestamp_filter = firebase.firestore.Timestamp.fromDate(new Date("2019-06-30"));
   console.log(start_date_timestamp_filter)
 
   useEffect(() => {
@@ -244,9 +244,11 @@ const Ads = (props) => {
 
   return (
     <main className="ads ads-container">
+      {ads.length === 0 ? 'Aucun résultats pour votre recherche' : <div>
       {ads.map((ad) => (
         <AdsItemSmall key={ad.id} ad={ad} />
       ))}
+        </div>}
     </main>
   );
 };

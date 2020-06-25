@@ -51,7 +51,7 @@ export default function AdsItemSmall({ ad }) {
                 className="picto-container"
                 style={{ backgroundImage: `url(${pictoDuration})` }}
               />
-              <p>Durée : {ad.duration_day ? `${ad.duration_day} jours` : `${ad.duration_month} mois`}</p>
+              <p>Durée : {ad.duration}</p>
             </div>
             <div className='ad-reccurent'>
             <span
