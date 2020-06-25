@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import Searchbar from "../components/Searchbar";
 import { Typewriter } from 'react-typewriting-effect'
 import 'react-typewriting-effect/dist/index.css';

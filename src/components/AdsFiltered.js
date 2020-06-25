@@ -2,17 +2,18 @@ import React, { useState, useEffect } from "react";
 import firebase from "../firebase";
 import AdsItemSmall from "./AdsItemSmall";
 import "../styles/AdsFiltered.css";
-import Searchbar from "./Searchbar";
+import { Link } from 'react-router-dom'
 
 const Ads = (props) => {
+  console.log(props.datas)
   const [ads, setAds] = useState([]);
-  const duration = "1 mois";
-  const specialty = "";
-  const departement = "Rhônes-Alpes";
-  const accomodation = true;
-  const date = ""
-  const start_date_timestamp_filter = null /* firebase.firestore.Timestamp.fromDate(
-    new Date("2020-08-30"));  */
+  const duration = props.datas.duration;
+  const specialty = props.datas.specialty;
+  const departement = props.datas.place;
+  const accomodation = props.datas.accomodation;
+  const date = props.datas.date
+  const start_date_timestamp_filter = firebase.firestore.Timestamp.fromDate(
+    new Date(date));
 
 
   useEffect(() => {
@@ -256,15 +257,14 @@ const Ads = (props) => {
 
       return () => unsubscribe();
     }
-  }, []);
+  }, [accomodation, departement, duration, specialty]);
 
   return (
     <main>
       {ads.length === 0 ? (
         <div className="ads no-results">
           <p>Aucun résultats pour votre recherche</p>
-          <p>Nouvelle recherche</p>
-          <Searchbar />
+          <Link to='/annonces' className='btn-new-search'>Nouvelle recherche</Link>
         </div>
       ) : (
         <div className="ads ads-container">
