@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import firebase from '../firebase';
 import AdsItemSmall from './AdsItemSmall'
-import Footer from './Footer';
 
 const Ads = () => {
 
@@ -20,7 +19,6 @@ const Ads = () => {
     return (
         <div>
             {ads.map((ad)=> <AdsItemSmall ad={ad}/>)}
-            <Footer/>
         </div>
     );
 };
