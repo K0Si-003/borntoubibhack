@@ -127,6 +127,10 @@ class AdvancedSearch extends Component {
                         </MenuItem>
                     ))}
                 </TextField>
+                {this.props.datas.search && 
+                <div className='save-research' onClick={this.props.handleClick}>
+                  <i class="fas fa-bell"></i> Sauvegarder ma recherche
+                </div>}
               </div>
             )
             : (

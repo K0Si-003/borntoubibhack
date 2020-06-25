@@ -33,7 +33,8 @@ class App extends React.Component {
       specialty: '',
       suggestionsSpecialties: [],
       date: null,
-      duration: null
+      duration: null,
+      search: false
     };
   }
 
@@ -86,11 +87,19 @@ class App extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
+    this.setState({search: true})
   }
 
   /* Advanced search */
   handleChangeAdvanced = (e) => {
     this.setState({[e.target.name]: e.target.value})
+  }
+
+  handleClick = (e) => {
+    localStorage.setItem('place', this.state.place);
+    localStorage.setItem('specialty', this.state.specialty);
+    localStorage.setItem('date', this.state.date);
+    localStorage.setItem('duration', this.state.duration);
   }
 
   render() {
@@ -110,6 +119,7 @@ class App extends React.Component {
                 handleSuggestionPlaces={this.handleSuggestionPlaces}
                 handleSubmit={this.handleSubmit}
                 handleChangeAdvanced={this.handleChangeAdvanced}
+                handleClick={this.handleClick}
               />
             </Route>
             <Route exact path='/annonces'>
