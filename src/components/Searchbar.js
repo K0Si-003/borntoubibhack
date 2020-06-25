@@ -26,6 +26,7 @@ export const Searchbar = (props) => {
             type='text' placeholder='Ma spécialité'
             value={props.datas.specialty}
             onChange={props.handleSpecialtyChanged}
+            required
           />
           <ul className='autocomplete'>
         {props.datas.suggestionsSpecialties.slice(0, 5).map((item, index) => <li key={index} onClick={() => props.handleSpecialtiesSelected(item)}>{item}</li>)}
@@ -52,7 +53,10 @@ export const Searchbar = (props) => {
       </div>
 
       <div className='advanced-search'>
-        <AdvancedSearch />
+        <AdvancedSearch 
+          datas={props.datas}
+          handleChangeAdvanced={props.handleChangeAdvanced}
+         />
         <Link to="/annonces">
         <input
           type='submit'

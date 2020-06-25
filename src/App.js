@@ -31,7 +31,9 @@ class App extends React.Component {
       place : '',
       suggestionsPlaces : [],
       specialty: '',
-      suggestionsSpecialties: []
+      suggestionsSpecialties: [],
+      date: null,
+      duration: null
     };
   }
 
@@ -86,6 +88,11 @@ class App extends React.Component {
     console.log(this.state);
   }
 
+  /* Advanced search */
+  handleChangeAdvanced = (e) => {
+    this.setState({[e.target.name]: e.target.value})
+  }
+
   render() {
     return (
       <Router>
@@ -102,6 +109,7 @@ class App extends React.Component {
                 renderSpecialtiesSuggestions={this.renderSpecialtiesSuggestions}
                 handleSuggestionPlaces={this.handleSuggestionPlaces}
                 handleSubmit={this.handleSubmit}
+                handleChangeAdvanced={this.handleChangeAdvanced}
               />
             </Route>
             <Route exact path='/annonces'><Ads datas={this.state} handleSpecialtyChanged={this.handleSpecialtyChanged}/></Route>
