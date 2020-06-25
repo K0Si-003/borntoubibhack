@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { TextField } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import durationList from '../dayduration.json';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const months = [
     {

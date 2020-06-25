@@ -21,7 +21,7 @@ firebase.firestore().collection('times').add({
   time_seconds: 45
 })
 
-const departments = departmentsList.map(department => `${department.departmentName}, ${department.regionName}`);
+const departments = departmentsList.map(department => `${department.departmentName}`);
 const specialties = specialtiesList.map(list => `${list.specialty}`);
 
 class App extends React.Component {
