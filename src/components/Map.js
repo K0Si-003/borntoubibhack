@@ -27,6 +27,7 @@ const MapComponent = (ads) => {
               {ad.firstname + " " + ad.lastname} 
               <br /> {ad.specialty} 
               <br />{" "} Début : {moment.unix(ad.start_date.seconds).format("DD MMMM YYYY")}
+              <br /> {ad.accomodation ? 'Logement fourni' : ''}
               <br /> <Link to={`/annonces/${ad.id}`}>Voir l'annonce</Link>
             </Popup>
           </Marker>
