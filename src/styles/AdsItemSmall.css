@@ -1,8 +1,28 @@
 .card {
   max-width: 345px;
+  margin: 15px;
 }
 
 .card-media {
   height: 140px;
 }
 
+.card .picto-container {
+  background-position:center;
+  background-size:cover;
+  width:15px;
+  height:15px;
+  margin-right:5px;
+  display:inline-block;
+  margin-top:4px;
+}
+
+.card .ad-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .ad-info .start-date {
+  display: flex;
+  align-items: flex-end;
+}
