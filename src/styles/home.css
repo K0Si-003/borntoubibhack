@@ -1,0 +1,15 @@
+ .textintro {
+  /* padding-top: 5vh;
+  padding-bottom: 5vh; */
+  font-size: 1.5em;
+  height: 2vh;
+  margin: 20px 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+  /* MEDIA QUERIES BIO */
+  .textintro {
+    font-size: 1em;
+  }
+}
