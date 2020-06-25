@@ -10,6 +10,7 @@ const Ads = (props) => {
   const specialty = "";
   const departement = "Rhônes-Alpes";
   const accomodation = true;
+  const date = ""
   const start_date_timestamp_filter = null /* firebase.firestore.Timestamp.fromDate(
     new Date("2020-08-30"));  */
 
@@ -254,7 +255,7 @@ const Ads = (props) => {
         });
 
       return () => unsubscribe();
-    } 
+    }
   }, []);
 
   return (
