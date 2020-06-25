@@ -6,10 +6,11 @@ import Searchbar from "./Searchbar";
 
 const Ads = (props) => {
   const [ads, setAds] = useState([]);
-  const duration = "Moins d'1 mois";
+  const duration = "1 mois";
   const specialty = "";
   const departement = "Rhônes-Alpes";
-  const accomodation = false;
+  const accomodation = true;
+  const date = ""
   const start_date_timestamp_filter = null /* firebase.firestore.Timestamp.fromDate(
     new Date("2020-08-30"));  */
 
@@ -254,7 +255,7 @@ const Ads = (props) => {
         });
 
       return () => unsubscribe();
-    } 
+    }
   }, []);
 
   return (

@@ -22,24 +22,23 @@ const Home = (props) => {
   }, [])
 
   return (
-    <main>  
-      {/* <DatasContextProvider>  */}
-      <div className='textintro' 
-      style={{fontFamily: 'Nunito', color: '#0596DE'}}>
-        <Typewriter string='Toi aussi, jeune remplaçant...' speed={80} />
+    <main>
+      <div className='textintro'
+        style={{ fontFamily: 'Nunito', color: '#0596DE' }}>
+        <Typewriter string='Toi aussi, jeune remplaçant... 😄' speed={80} loop={true} />
       </div>
-        <Searchbar datas={props.datas} 
-                handleSpecialtyChanged={props.handleSpecialtyChanged}
-                renderSpecialtiesSuggestion={props.renderSpecialtiesSuggestion}
-                handleSpecialtiesSelected={props.handleSpecialtiesSelected}
-                handlePlaceChanged={props.handlePlaceChanged}
-                renderSpecialtiesSuggestions={props.renderSpecialtiesSuggestions}
-                handleSuggestionPlaces={props.handleSuggestionPlaces}
-                handleSubmit={props.handleSubmit}
-                handleChangeAdvanced={props.handleChangeAdvanced}
-                />
+      <Searchbar datas={props.datas}
+        handleSpecialtyChanged={props.handleSpecialtyChanged}
+        renderSpecialtiesSuggestion={props.renderSpecialtiesSuggestion}
+        handleSpecialtiesSelected={props.handleSpecialtiesSelected}
+        handlePlaceChanged={props.handlePlaceChanged}
+        renderSpecialtiesSuggestions={props.renderSpecialtiesSuggestions}
+        handleSuggestionPlaces={props.handleSuggestionPlaces}
+        handleSubmit={props.handleSubmit}
+        handleChangeAdvanced={props.handleChangeAdvanced}
+      />
       {/* </DatasContextProvider> */}
-      <MapComponent adsDetails={ads}/>
+      <MapComponent adsDetails={ads} />
     </main>
   );
 };
