@@ -259,6 +259,14 @@ const Ads = (props) => {
     }
   }, [accomodation, departement, duration, specialty]);
 
+  const checkDate = (ads) => {
+    if (start_date_timestamp_filter) {
+      return ads.filter(ad => ad.start_date >= start_date_timestamp_filter)
+    } else {
+      return ads
+    }
+  }
+
   return (
     <main>
       {ads.length === 0 ? (
@@ -268,7 +276,7 @@ const Ads = (props) => {
         </div>
       ) : (
         <div className="ads ads-container">
-          {ads.map((ad) => (
+          {checkDate(ads).map((ad) => (
             <AdsItemSmall key={ad.id} ad={ad} />
           ))}
         </div>
