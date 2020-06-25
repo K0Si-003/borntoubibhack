@@ -3,6 +3,14 @@
     margin: auto;
     display: flex;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-search {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px !important;
 }
 
 .search-bar input[type=text] {
@@ -109,8 +117,12 @@
     font-size: 24px;
 }
 
-.input-submit {
+.input-submit,
+.btn-advanced-search {
     border-radius: 30px;
+    padding: 0 15px;
+    height: 30px;
+    align-self: center;
     outline: none;
     border: 1px solid #02a2ef;
     font-weight: bold;
@@ -119,4 +131,26 @@
     background-color: white;
     font-family: 'Nunito', serif;
     cursor: pointer;
+}
+
+.btn-advanced-search {
+    width: 170px;
+}
+
+.inputs-advanced-search {
+    padding-top: 20px;
+}
+
+.advanced-search {
+    margin: 0 30px !important;
+}
+
+.date-input {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .main-search {
+        flex-direction: column;
+    }
 }
