@@ -14,6 +14,7 @@
 }
 
 .search-bar input[type=text] {
+    /* margin-top: 20vh; */
     width: 100%;
     box-sizing: border-box;
     border: 1px solid #ffffff;
@@ -26,7 +27,7 @@
     margin-right: 20px;
     outline: none;
     background-size: 24px;
-    color: #005C89;
+    color: #0596DE;
     font-family: 'Nunito', serif;
     box-shadow: 0 8px 16px rgba(181, 180, 170, 0.4);
     letter-spacing: 1px;
@@ -36,6 +37,11 @@
 .search-bar input[type=text]:focus {
     transform: scale(1.025);
     transition: 0.4s;
+}
+
+#searchinput {
+  width: 30%;
+  font-size: 1.2em;
 }
 
 
@@ -124,7 +130,7 @@
     right: 40px;
     background: none;
     border: none;
-    color: #02a2ef;
+    color: #0596DE;
     font-size: 24px;
 }
 
