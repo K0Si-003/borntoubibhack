@@ -4,7 +4,7 @@ import MapComponent from '../components/Map';
 import firebase from '../firebase';
 
 const Home = () => {
-  
+
   const [ads, setAds] = useState([])
 
   useEffect(() => {
