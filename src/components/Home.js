@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import Searchbar from "../components/Searchbar";
 import MapComponent from '../components/Map';
 import firebase from '../firebase';
 
-const Home = () => {
+const Home = (props) => {
+
 
   const [ads, setAds] = useState([])
 
@@ -17,8 +18,17 @@ const Home = () => {
   }, [])
 
   return (
-    <main>
-      <Searchbar />
+    <main>  
+      {/* <DatasContextProvider>  */}
+        <Searchbar datas={props.datas} 
+                handleSpecialtyChanged={props.handleSpecialtyChanged}
+                renderSpecialtiesSuggestion={props.renderSpecialtiesSuggestion}
+                handleSpecialtiesSelected={props.handleSpecialtiesSelected}
+                handlePlaceChanged={props.handlePlaceChanged}
+                renderSpecialtiesSuggestions={props.renderSpecialtiesSuggestions}
+                handleSuggestionPlaces={props.handleSuggestionPlaces}
+                handleSubmit={props.handleSubmit}/>
+      {/* </DatasContextProvider> */}
       <MapComponent adsDetails={ads}/>
     </main>
   );

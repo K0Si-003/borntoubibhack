@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import firebase from '../firebase';
 import AdsItemSmall from './AdsItemSmall';
 import '../styles/Ads.css';
+import Searchbar from "../components/Searchbar";
 
 
 const Ads = () => {
@@ -19,8 +20,8 @@ const Ads = () => {
   }, [])
  
     return (
-
         <main className='ads ads-container'>
+            <Searchbar />
             {ads.map((ad)=> <AdsItemSmall ad={ad}/>)}
         </main>
     );
