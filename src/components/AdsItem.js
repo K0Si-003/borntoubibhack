@@ -15,9 +15,19 @@ export default function AdsItem(props) {
 
   return (
     <main>
-      <h1>{ad.firstname}</h1>
-    </main>
+      <h1>Détails de l'annonce</h1>
+      <img src={ad.image}></img>
+      <p>{ad.firstname} {ad.lastname}</p>
+      <p>{ad.specialty}</p>
+      <p>{ad.content}</p>
+      <p>{ad.department}</p>
+      <p>{ad.start_date}</p>
+      <p>{ad.duration}</p>
+      <p>{ad.isPonctual}</p>
+      <p>{ad.accomodation ? 'Logement fourni' : 'Logement non-fourni'}</p>
+      <p>{ad.accommodation && ad.atDomicile ? 'Logement chez le médecin' : 'Logement autres'}</p>
 
+    </main>
 
   );
 }
