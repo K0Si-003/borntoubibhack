@@ -10,11 +10,12 @@
     top: 0;
     width: 250px;
     height: 100%;
-    background-color: #DE4610;
+    background-color: #0596DE;
     z-index: 100;
     transform: translateX(105%);
     transition: transform 0.4s ease-out;
     text-align: left;
+    z-index: 3000;
 } 
 
 .nav-menu.open {
@@ -28,12 +29,12 @@
 }
 
 .nav-menu ul li {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .nav-menu .menuItems li a {
     text-decoration: none;
-    font-family: 'Montserrat';
+    font-family: 'Nunito', serif;
     color: #fff;
     font-weight: bold;
     font-size: 24px;
@@ -53,6 +54,7 @@
 @media screen and (min-width: 850px) {
     .mobile-menu {
         display: none;
+        z-index: 3000;
     }
     .desktop-menu {
       display: flex;
@@ -77,6 +79,7 @@
       font-size: 20px;
       text-decoration: none;
       transition: 0.3s ease;
+      font-family: 'Nunito', serif;
     }
     .menu-item-desktop:hover {
       border-bottom: 2px solid #f7f1e9ff;

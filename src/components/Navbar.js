@@ -18,7 +18,7 @@ const Navbar = ({ show, handleOpen, handleClose }) => {
           <i className='fas fa-times' onClick={handleClose} />
         </div>
         <ul className='menuItems'>
-          <li><NavLink onClick={handleClose} to='/'>Acceuil</NavLink></li>
+          <li><NavLink onClick={handleClose} to='/'>Accueil</NavLink></li>
           <li><NavLink onClick={handleClose} to='/annonces'>Annonces</NavLink></li>
           <li><NavLink onClick={handleClose} to='/mes-recherches'>Mes recherches</NavLink></li>
           <li><NavLink onClick={handleClose} to='/FAQ'>FAQ</NavLink></li>
@@ -26,7 +26,7 @@ const Navbar = ({ show, handleOpen, handleClose }) => {
       </nav>
       <nav className='desktop-menu'>
         <ul>
-          <li><NavLink className='menu-item-desktop' exact activeClassName='active' to='/'>Acceuil</NavLink></li>
+          <li><NavLink className='menu-item-desktop' exact activeClassName='active' to='/'>Accueil</NavLink></li>
           <li><NavLink className='menu-item-desktop' activeClassName='active' to='/annonces'>Annonces</NavLink></li>
           <li><NavLink className='menu-item-desktop' activeClassName='active' to='/mes-recherches'>Mes recherches</NavLink></li>
           <li><NavLink className='menu-item-desktop' activeClassName='active' to='/FAQ'>FAQ</NavLink></li>
