@@ -28,12 +28,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      place : '',
-      suggestionsPlaces : [],
+      place: '',
+      suggestionsPlaces: [],
       specialty: '',
       suggestionsSpecialties: [],
       date: null,
-      duration: null
+      duration: null,
+      accomodation: false
     };
   }
 
@@ -45,8 +46,8 @@ class App extends React.Component {
       const regex = new RegExp(`^${value}`, 'i');
       autocompletions = specialties.sort().filter(v => regex.test(v));
     }
-    this.setState({specialty: value})
-    this.setState({suggestionsSpecialties: autocompletions})
+    this.setState({ specialty: value })
+    this.setState({ suggestionsSpecialties: autocompletions })
   }
 
   renderSpecialtiesSuggestions = () => {
@@ -62,8 +63,8 @@ class App extends React.Component {
   }
 
   handleSpecialtiesSelected = (value) => {
-    this.setState({ specialty : value })
-    this.setState({ suggestionsSpecialties :[] });
+    this.setState({ specialty: value })
+    this.setState({ suggestionsSpecialties: [] });
   }
 
   /* Autocomplete for location */
@@ -82,7 +83,7 @@ class App extends React.Component {
     this.setState({ place: value })
     this.setState({ suggestionsPlaces: [] })
   }
-  
+
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
@@ -90,7 +91,10 @@ class App extends React.Component {
 
   /* Advanced search */
   handleChangeAdvanced = (e) => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({ [e.target.name]: e.target.value })
+  }
+  handleChangecheck = (e) => {
+    this.setState({ [e.target.name]: e.target.checked })
   }
 
   render() {
@@ -100,8 +104,8 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path='/'>
-              <Home 
-                datas={this.state} 
+              <Home
+                datas={this.state}
                 handleSpecialtyChanged={this.handleSpecialtyChanged}
                 renderSpecialtiesSuggestion={this.renderSpecialtiesSuggestion}
                 handleSpecialtiesSelected={this.handleSpecialtiesSelected}
@@ -110,11 +114,12 @@ class App extends React.Component {
                 handleSuggestionPlaces={this.handleSuggestionPlaces}
                 handleSubmit={this.handleSubmit}
                 handleChangeAdvanced={this.handleChangeAdvanced}
+                handleChangecheck={this.handleChangecheck}
               />
             </Route>
             <Route exact path='/annonces'>
-              <Ads 
-                datas={this.state} 
+              <Ads
+                datas={this.state}
                 handleSpecialtyChanged={this.handleSpecialtyChanged}
                 renderSpecialtiesSuggestion={this.renderSpecialtiesSuggestion}
                 handleSpecialtiesSelected={this.handleSpecialtiesSelected}
@@ -137,12 +142,12 @@ class App extends React.Component {
             /></Route>
             <Route exact path='/annonces/:id' render={(routeProps) => <AdsItem {...routeProps} />} />
             <Route exact path='/mes-recherches'><FavoriteSearch /></Route>
-            <Route exact path='/FAQ'><FAQ datas={this.state}/></Route>
+            <Route exact path='/FAQ'><FAQ datas={this.state} /></Route>
           </Switch>
           <Footer />
         </div>
       </Router>
-      
+
     );
   };
 }

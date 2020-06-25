@@ -48,6 +48,7 @@ export const Searchbar = (props) => {
                 <AdvancedSearch
                     datas={props.datas}
                     handleChangeAdvanced={props.handleChangeAdvanced}
+                    handleChangecheck={props.handleChangecheck}
                 />
                 <Link to="/annonces/search">
                     <input
