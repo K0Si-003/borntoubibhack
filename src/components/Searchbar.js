@@ -13,44 +13,44 @@ const Searchbar = () => {
     const [specialty, setSpecialty] = useState('')
     const [suggestionsSpecialties, setSuggestionsSpecialties] = useState([])
 
-/* Autocomplete for specialty */
+    /* Autocomplete for specialty */
     const handleSpecialtyChanged = (e) => {
         const value = e.target.value;
         let autocompletions = [];
         if (value.length > 0) {
-          const regex = new RegExp(`^${value}`, 'i');
-          autocompletions = specialties.sort().filter(v => regex.test(v));
+            const regex = new RegExp(`^${value}`, 'i');
+            autocompletions = specialties.sort().filter(v => regex.test(v));
         }
-            setSpecialty(value);
-            setSuggestionsSpecialties(autocompletions)
-      }
+        setSpecialty(value);
+        setSuggestionsSpecialties(autocompletions)
+    }
 
     const renderSpecialtiesSuggestions = () => {
         if (suggestionsSpecialties.length === 0) {
-          return null;
+            return null;
         }
         return (
-          <ul className='autocomplete'>
-            {suggestionsSpecialties.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSpecialtiesSelected(item)}>{item}</li>)}
-          </ul>
+            <ul className='autocomplete'>
+                {suggestionsSpecialties.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSpecialtiesSelected(item)}>{item}</li>)}
+            </ul>
         );
-      }
+    }
 
     const handleSpecialtiesSelected = (value) => {
         setSpecialty(value);
         setSuggestionsSpecialties([]);
     }
 
-/* Autocomplete for location */
+    /* Autocomplete for location */
     const handlePlaceChanged = (e) => {
         const value = e.target.value;
         let autocompletions = [];
         if (value.length > 0) {
-        const regex = new RegExp(`^${value}`, 'i');
-        autocompletions = departments.sort().filter(v => regex.test(v));
+            const regex = new RegExp(`^${value}`, 'i');
+            autocompletions = departments.sort().filter(v => regex.test(v));
         }
-            setPlace(value);
-            setSuggestionsPlaces(autocompletions)
+        setPlace(value);
+        setSuggestionsPlaces(autocompletions)
     }
 
     const renderPlacesSuggestions = () => {
@@ -58,9 +58,9 @@ const Searchbar = () => {
             return null;
         }
         return (
-        <ul className='autocomplete'>
-            {suggestionsPlaces.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSuggestionPlaces(item)}>{item}</li>)}
-        </ul>
+            <ul className='autocomplete'>
+                {suggestionsPlaces.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSuggestionPlaces(item)}>{item}</li>)}
+            </ul>
         );
     }
 
@@ -72,7 +72,7 @@ const Searchbar = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
     }
-    
+
     return (
         <form className='search-bar' onSubmit={(e) => handleSubmit(e)}>
             <div className='main-search'>
