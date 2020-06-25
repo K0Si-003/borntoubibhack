@@ -92,8 +92,8 @@ const Searchbar = () => {
                 />
                 {renderPlacesSuggestions()}
                 </label>
-                <i className='fas fa-map-marker-alt location-icon' />
-                <input
+                <i className='fas fa-map-marker-alt location-icon' id='iconmobile' />
+                <input id='searchbutton'
                 type='submit'
                 className='input-submit'
                 value='Rechercher' />

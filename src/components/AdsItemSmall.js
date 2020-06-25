@@ -13,7 +13,7 @@ export default function AdsItemSmall( {ad} ) {
 
 console.log(ad)
   return (
-    <Card className='card'>
+    <Card className='card'>git b
       <CardActionArea>
         <CardMedia
           className='card-media'

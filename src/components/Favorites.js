@@ -4,7 +4,7 @@ import Footer from './Footer';
 const Favorites = () => {
     return (
         <div>
-          <Footer/>
+
         </div>
     );
 };

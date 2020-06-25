@@ -2,10 +2,11 @@
     width: 80%;
     margin: auto;
     display: flex;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 .search-bar input[type=text] {
+    /* margin-top: 20vh; */
     width: 100%;
     box-sizing: border-box;
     border: 1px solid #ffffff;
@@ -17,7 +18,7 @@
     padding: 15px 20px 10px 10px;
     outline: none;
     background-size: 24px;
-    color: #005C89;
+    color: #0596DE;
     font-family: 'Nunito', serif;
     box-shadow: 0 8px 16px rgba(181, 180, 170, 0.4);
     letter-spacing: 1px;
@@ -27,6 +28,11 @@
 .search-bar input[type=text]:focus {
     transform: scale(1.025);
     transition: 0.4s;
+}
+
+#searchinput {
+  width: 30%;
+  font-size: 1.2em;
 }
 
 
@@ -105,7 +111,7 @@
     right: 40px;
     background: none;
     border: none;
-    color: #02a2ef;
+    color: #0596DE;
     font-size: 24px;
 }
 
@@ -119,4 +125,51 @@
     background-color: white;
     font-family: 'Nunito', serif;
     cursor: pointer;
+}
+
+#searchbutton {
+  width: 20vw;
+  font-size: 1.2em;
+}
+
+/* MEDIA QUERIES Desktop*/
+@media screen and (min-width: 1300px) {
+  #searchbutton {
+    width: 30vw;
+    font-size: 1.3em;
+  }
+}
+
+/* MEDIA QUERIES Tab */
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+  #searchbutton {
+    width: 40vw;
+    font-size: 1.2em;
+  }
+}
+
+/* MEDIA QUERIES Mobile */
+@media screen and (max-width: 900px)  {
+  .search-bar {
+      flex-wrap: wrap;
+    }
+
+  #searchbutton {
+    margin:  auto ;
+    width: 20vw;
+    height: 5vh;
+    font-size: 1.2em;
+  }
+  .search-bar input[type=text] {
+    padding-right: 20px;
+    margin-bottom: 10%;
+}
+
+  .search-icon {
+    margin-left: -10%;
+  }
+
+  .location-icon {
+    margin-left: -10%;
+    }
 }
