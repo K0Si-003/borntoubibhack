@@ -112,7 +112,18 @@ class App extends React.Component {
                 handleChangeAdvanced={this.handleChangeAdvanced}
               />
             </Route>
-            <Route exact path='/annonces'><Ads datas={this.state} handleSpecialtyChanged={this.handleSpecialtyChanged}/></Route>
+            <Route exact path='/annonces'>
+              <Ads 
+                datas={this.state} 
+                handleSpecialtyChanged={this.handleSpecialtyChanged}
+                renderSpecialtiesSuggestion={this.renderSpecialtiesSuggestion}
+                handleSpecialtiesSelected={this.handleSpecialtiesSelected}
+                handlePlaceChanged={this.handlePlaceChanged}
+                renderSpecialtiesSuggestions={this.renderSpecialtiesSuggestions}
+                handleSuggestionPlaces={this.handleSuggestionPlaces}
+                handleSubmit={this.handleSubmit}
+                handleChangeAdvanced={this.handleChangeAdvanced}
+              /></Route>
             <Route exact path='/annonces/:id' render={(routeProps) => <AdsItem {...routeProps} />} />
             <Route exact path='/mes-recherches'><FavoriteSearch /></Route>
             <Route exact path='/FAQ'><FAQ datas={this.state}/></Route>
