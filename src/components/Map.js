@@ -9,6 +9,7 @@ const MapComponent = (ads) => {
       <Map
         center={firstPosition}
         zoom={6}
+        style={{margin: '0 auto', width: '80%', marginBottom: '40px'}}
       >
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
