@@ -17,9 +17,9 @@ const Ads = () => {
   }, [])
  
     return (
-        <div>
+        <main>
             {ads.map((ad)=> <AdsItemSmall ad={ad}/>)}
-        </div>
+        </main>
     );
 };
 

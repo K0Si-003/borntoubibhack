@@ -13,9 +13,9 @@ useEffect(() => {
   })}, [currentId])
 
 return (
-  <div>
+  <main>
     <h1>{ad.firstname}</h1>
-</div>
+</main>
 
 
 );

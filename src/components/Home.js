@@ -3,9 +3,9 @@ import Searchbar from "../components/Searchbar";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <Searchbar />
-    </div>
+    </main>
   );
 };
 
