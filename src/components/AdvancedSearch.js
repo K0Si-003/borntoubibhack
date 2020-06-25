@@ -131,7 +131,7 @@ class AdvancedSearch extends Component {
                   ))}
                 </TextField>
                 <label>Avec logement </label>
-                <input className="checklogement"
+                <input
                   checked={this.props.accomodation}
                   type="checkbox"
                   name="accomodation"
