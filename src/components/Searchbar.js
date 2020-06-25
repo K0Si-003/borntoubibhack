@@ -85,19 +85,19 @@ const Searchbar = () => {
                         />
                         {renderSpecialtiesSuggestions()}
                     </label>
-                    <i className="fas fa-search search-icon"></i>
+
                     <label className='search-label-place' htmlFor='search-input'>
                     <input
+                        className='localization-input-specialty'
                         type='text' placeholder='Mon département'
                         value={place}
                         onChange={handlePlaceChanged}
                     />
                         {renderPlacesSuggestions()}
                     </label>
-                    <i className='fas fa-map-marker-alt location-icon' />
                     <input
                         type='submit'
-                        className='input-submit'
+                        className='input-submit submit-desktop'
                         value='Rechercher' />
             </div>
 
