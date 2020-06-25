@@ -41,10 +41,6 @@ const Searchbar = () => {
         setSuggestionsSpecialties([]);
     }
 
-    const getValue = (e) => {
-        setFavoris({ speciality: specialty, suggestionsPlaces: [...suggestionsPlaces, suggestionsPlaces] })
-        console.log(favoris)
-    }
 
     /* Autocomplete for location */
     const handlePlaceChanged = (e) => {
@@ -113,7 +109,7 @@ const Searchbar = () => {
                 </div>
 
                 <div className='advanced-search'>
-                    <AdvancedSearch component={<Favorite addToFavorite={() => getValue()} />} />
+                    <AdvancedSearch component={<Favorite />} />
                     <input
                         type='submit'
                         className='input-submit submit-mobile'

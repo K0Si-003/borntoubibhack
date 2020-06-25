@@ -4,7 +4,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 const months = [
   {
-    duration: "Moins d\'1 mois"
+    duration: "Moins d'1 mois"
   },
   {
     duration: "1 mois"
