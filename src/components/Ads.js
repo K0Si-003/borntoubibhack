@@ -5,13 +5,30 @@ import "../styles/Ads.css";
 
 const Ads = (props) => {
   const [ads, setAds] = useState([]);
-  const specialty = "Ostéopathe";
+  const specialty = "";
+  const departement = "";
+  const duration = null;
   const start_date_timestamp_filter = firebase.firestore.Timestamp.fromDate(new Date("2020-06-30"));
   console.log(start_date_timestamp_filter)
 
   useEffect(() => {
-    if (start_date_timestamp_filter) {
-      console.log('first condition')
+    if (specialty && start_date_timestamp_filter && departement) {
+      const unsubscribe = firebase
+        .firestore()
+        .collection("adds")
+        .where("specialty", "==", specialty)
+        .where("departement", "==", departement)
+        .where("start_date", ">=", start_date_timestamp_filter)
+        .onSnapshot((s) => {
+          setAds(
+            s.docs.map((ad) => {
+              return { id: ad.id, ...ad.data() };
+            })
+          );
+        });
+
+      return () => unsubscribe();
+    } else if (specialty && start_date_timestamp_filter) {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
@@ -26,11 +43,82 @@ const Ads = (props) => {
         });
 
       return () => unsubscribe();
+    } else if (start_date_timestamp_filter && departement) {
+      const unsubscribe = firebase
+        .firestore()
+        .collection("adds")
+        .where("departement", "==", departement)
+        .where("start_date", ">=", start_date_timestamp_filter)
+        .onSnapshot((s) => {
+          setAds(
+            s.docs.map((ad) => {
+              return { id: ad.id, ...ad.data() };
+            })
+          );
+        });
+
+      return () => unsubscribe();
+    } else if (specialty && departement) {
+      const unsubscribe = firebase
+        .firestore()
+        .collection("adds")
+        .where("specialty", "==", specialty)
+        .where("departement", "==", departement)
+        .onSnapshot((s) => {
+          setAds(
+            s.docs.map((ad) => {
+              return { id: ad.id, ...ad.data() };
+            })
+          );
+        });
+
+      return () => unsubscribe();
+    } else if (specialty) {
+      const unsubscribe = firebase
+        .firestore()
+        .collection("adds")
+        .where("specialty", "==", specialty)
+        .onSnapshot((s) => {
+          setAds(
+            s.docs.map((ad) => {
+              return { id: ad.id, ...ad.data() };
+            })
+          );
+        });
+
+      return () => unsubscribe();
+    } else if (departement) {
+      const unsubscribe = firebase
+        .firestore()
+        .collection("adds")
+        .where("departement", "==", departement)
+        .onSnapshot((s) => {
+          setAds(
+            s.docs.map((ad) => {
+              return { id: ad.id, ...ad.data() };
+            })
+          );
+        });
+
+      return () => unsubscribe();
+    } else if (start_date_timestamp_filter) {
+      const unsubscribe = firebase
+        .firestore()
+        .collection("adds")
+        .where("start_date", ">=", start_date_timestamp_filter)
+        .onSnapshot((s) => {
+          setAds(
+            s.docs.map((ad) => {
+              return { id: ad.id, ...ad.data() };
+            })
+          );
+        });
+
+      return () => unsubscribe();
     } else {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
-        .where("specialty", "==", `${specialty}`)
         .onSnapshot((s) => {
           setAds(
             s.docs.map((ad) => {
