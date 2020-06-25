@@ -1,10 +1,11 @@
 import React from 'react';
+import Footer from './Footer';
 
 const Favorites = () => {
     return (
-        <main>
+        <div>
 
-        </main>
+        </div>
     );
 };
 

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import '../styles/header.css';
 
+
+
 const Header = () => {
   const [openBurger, setOpenBurger] = useState(false);
   const openBurgerMenu = () => {
@@ -14,8 +16,7 @@ const Header = () => {
 
   return (
     <header className='header'>
-      {/* Logo incomming  */}
-      {/* <a href='/'><img src={logo} alt='logo' className='logo-header' /></a> */}
+      <a href='/'><img src={require('../images/logo_white.png')} alt='logo' className='logo-header' /></a>
       <div className='right-header-container'>
         <Navbar handleOpen={openBurgerMenu} handleClose={closeBurgerMenu} show={openBurger} />
       </div>

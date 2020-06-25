@@ -10,7 +10,7 @@ const Ads = (props) => {
   const specialty = "";
   const departement = "";
   const start_date_timestamp_filter = firebase.firestore.Timestamp.fromDate(
-    new Date("2019-06-30")
+    new Date("2022-06-30")
   );
 
   useEffect(() => {
