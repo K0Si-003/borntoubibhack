@@ -20,10 +20,10 @@
 .card .ad-info {
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  padding-top: 15px;
 }
 
-.card .ad-info .start-date {
+.card .ad-info .start-date, .card .ad-info .ad-duration, .card .ad-info .ad-reccurent {
   display: flex;
   align-items: flex-end;
 }

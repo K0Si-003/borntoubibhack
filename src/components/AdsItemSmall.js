@@ -7,6 +7,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import pictoDate from "../images/date.png";
+import pictoDuration from '../images/duration.png';
+import pictoReccurent from '../images/reccurent.png';
 import "../styles/AdsItemSmall.css";
 import { Link } from "react-router-dom";
 import moment from "moment";
@@ -20,7 +22,7 @@ export default function AdsItemSmall({ ad }) {
       <CardActionArea>
         <CardMedia
           className="card-media"
-          image="http://us.media.france.fr/sites/default/files/styles/horizontal/public/image/press_release/StEtienne1-Evelyne-Deveaux---Saint-Etienne-Tourisme-et-Congres.jpg?itok=HsqTUawS"
+          image={`${ad.image}`}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -42,8 +44,20 @@ export default function AdsItemSmall({ ad }) {
               />
               <p>Date de début : {start_date}</p>
             </div>
-            <p>Durée : {ad.duration} {ad.unit === "day" ? "jours" : "mois"}</p>
-            <p>{ad.isPonctual ? "Ponctuel" : "Réccurent"}</p>
+            <div className='ad-duration'>
+            <span
+                className="picto-container"
+                style={{ backgroundImage: `url(${pictoDuration})` }}
+              />
+              <p>Durée : {ad.duration} {ad.unit === "day" ? "jours" : "mois"}</p>
+            </div>
+            <div className='ad-reccurent'>
+            <span
+                className="picto-container"
+                style={{ backgroundImage: `url(${pictoReccurent})` }}
+              />
+              <p>{ad.isPonctual ? "Ponctuel" : "Réccurent"}</p>
+            </div>
           </div>
         </CardContent>
       </CardActionArea>
