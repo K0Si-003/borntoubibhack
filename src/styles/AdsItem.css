@@ -1,3 +1,13 @@
+.details-container .card {
+  width: 60%;
+  margin: 30px auto;
+  height: fit-content;
+}
+
+.details-container .card-media {
+  height: 140px;
+}
+
 .details-container {
   display: flex;
   flex-direction: column;
@@ -8,7 +18,7 @@
 
 .details-title {
   margin: 1em;
-  font-family: Nunito;
+  font-family: arial;
 }
 
 .details-content {
@@ -40,9 +50,13 @@
   max-width: 100%;
 }
 
-@media screen and (min-width: 750px) {
-  .details-content {
-    flex-direction: row;
-    justify-content: center;
+.details-container li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .details-container .card {
+    width: 300px;
   }
 }
