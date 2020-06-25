@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 
 .App {
@@ -8,9 +9,20 @@
   display: flex;
   flex-direction: column;
 }
-
+.checklogement{
+  display: flex;
+  flex-direction: column-reverse;
+}
 main {
   flex: 1 0 auto;
+}
+.span-cloche{
+  display: flex;
+  flex-flow: row-reverse;
+  margin-right: 10px;
+  color:#02a2ef;
+  font-size: small;
+  font-family: sans-serif;
 }
 
 footer {
@@ -23,4 +35,5 @@ ul {
 
 a {
   text-decoration: none;
+  
 }

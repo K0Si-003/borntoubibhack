@@ -186,6 +186,13 @@
     padding-bottom: 30px;
 }
 
+.save-research {
+    position: relative;
+    bottom: 90px;
+    left: 380px;
+    color: #0596DE;
+}
+
 @media screen and (max-width: 800px) {
     .main-search {
         flex-direction: column;

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import DatasContext from './DatasContext';
+import Searchbar from "../components/Searchbar";
 
 const FavoriteSearch = () => {
     return (
         <main>
-            Mes recherches...
+            
         </main>
     );
 };

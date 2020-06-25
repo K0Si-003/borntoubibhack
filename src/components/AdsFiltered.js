@@ -2,26 +2,29 @@ import React, { useState, useEffect } from "react";
 import firebase from "../firebase";
 import AdsItemSmall from "./AdsItemSmall";
 import "../styles/AdsFiltered.css";
-import Searchbar from "./Searchbar";
+import { Link } from 'react-router-dom'
 
 const Ads = (props) => {
+  console.log(props.datas)
   const [ads, setAds] = useState([]);
-  const duration = "";
-  const specialty = "";
-  const departement = "";
+  const duration = props.datas.duration;
+  const specialty = props.datas.specialty;
+  const departement = props.datas.place;
+  const accomodation = props.datas.accomodation;
+  const date = props.datas.date
   const start_date_timestamp_filter = firebase.firestore.Timestamp.fromDate(
-    new Date("2022-06-30")
-  );
+    new Date(date));
+
 
   useEffect(() => {
-    if (specialty && start_date_timestamp_filter && departement && duration) {
+    if (specialty && departement && duration && accomodation ) {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
         .where("specialty", "==", specialty)
         .where("duration", "==", duration)
         .where("departement", "==", departement)
-        .where("start_date", ">=", start_date_timestamp_filter)
+        .where("accomodation", "==", true)
         .onSnapshot((s) => {
           setAds(
             s.docs.map((ad) => {
@@ -31,13 +34,13 @@ const Ads = (props) => {
         });
 
       return () => unsubscribe();
-    } else if (specialty && start_date_timestamp_filter && departement) {
+    } else if (specialty && accomodation && departement) {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
         .where("specialty", "==", specialty)
         .where("departement", "==", departement)
-        .where("start_date", ">=", start_date_timestamp_filter)
+        .where("accomodation", "==", true)
         .onSnapshot((s) => {
           setAds(
             s.docs.map((ad) => {
@@ -47,13 +50,13 @@ const Ads = (props) => {
         });
 
       return () => unsubscribe();
-    } else if (start_date_timestamp_filter && departement && duration) {
+    } else if (accomodation && departement && duration) {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
         .where("duration", "==", duration)
         .where("departement", "==", departement)
-        .where("start_date", ">=", start_date_timestamp_filter)
+        .where("accomodation", "==", true)
         .onSnapshot((s) => {
           setAds(
             s.docs.map((ad) => {
@@ -63,13 +66,13 @@ const Ads = (props) => {
         });
 
       return () => unsubscribe();
-    } else if (specialty && start_date_timestamp_filter && duration) {
+    } else if (specialty && accomodation && duration) {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
         .where("specialty", "==", specialty)
         .where("duration", "==", duration)
-        .where("start_date", ">=", start_date_timestamp_filter)
+        .where("accomodation", "==", true)
         .onSnapshot((s) => {
           setAds(
             s.docs.map((ad) => {
@@ -124,12 +127,12 @@ const Ads = (props) => {
         });
 
       return () => unsubscribe();
-    } else if (start_date_timestamp_filter && duration) {
+    } else if (accomodation && duration) {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
         .where("duration", "==", duration)
-        .where("start_date", ">=", start_date_timestamp_filter)
+        .where("accomodation", "==", true)
         .onSnapshot((s) => {
           setAds(
             s.docs.map((ad) => {
@@ -139,27 +142,12 @@ const Ads = (props) => {
         });
 
       return () => unsubscribe();
-    } else if (specialty && start_date_timestamp_filter) {
-      const unsubscribe = firebase
-        .firestore()
-        .collection("adds")
-        .where("specialty", "==", specialty)
-        .where("start_date", ">=", start_date_timestamp_filter)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
-
-      return () => unsubscribe();
-    } else if (start_date_timestamp_filter && departement) {
+    } else if (accomodation && departement) {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
         .where("departement", "==", departement)
-        .where("start_date", ">=", start_date_timestamp_filter)
+        .where("accomodation", "==", true)
         .onSnapshot((s) => {
           setAds(
             s.docs.map((ad) => {
@@ -175,6 +163,21 @@ const Ads = (props) => {
         .collection("adds")
         .where("specialty", "==", specialty)
         .where("departement", "==", departement)
+        .onSnapshot((s) => {
+          setAds(
+            s.docs.map((ad) => {
+              return { id: ad.id, ...ad.data() };
+            })
+          );
+        });
+
+      return () => unsubscribe();
+    } else if (accomodation && specialty) {
+      const unsubscribe = firebase
+        .firestore()
+        .collection("adds")
+        .where("specialty", "==", specialty)
+        .where("accomodation", "==", true)
         .onSnapshot((s) => {
           setAds(
             s.docs.map((ad) => {
@@ -212,21 +215,34 @@ const Ads = (props) => {
         });
 
       return () => unsubscribe();
-    } else if (start_date_timestamp_filter) {
-      const unsubscribe = firebase
-        .firestore()
-        .collection("adds")
-        .where("start_date", ">=", start_date_timestamp_filter)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
-
-      return () => unsubscribe();
     } else if (duration) {
+      const unsubscribe = firebase
+      .firestore()
+      .collection("adds")
+      .where("duration", "==", duration)
+      .onSnapshot((s) => {
+        setAds(
+          s.docs.map((ad) => {
+            return { id: ad.id, ...ad.data() };
+          })
+        );
+      });
+
+    return () => unsubscribe();
+    } else if (accomodation) {
+      const unsubscribe = firebase
+      .firestore()
+      .collection("adds")
+      .where("accomodation", "==", true)
+      .onSnapshot((s) => {
+        setAds(
+          s.docs.map((ad) => {
+            return { id: ad.id, ...ad.data() };
+          })
+        );
+      });
+
+    return () => unsubscribe();
     } else {
       const unsubscribe = firebase
         .firestore()
@@ -241,19 +257,26 @@ const Ads = (props) => {
 
       return () => unsubscribe();
     }
-  }, []);
+  }, [accomodation, departement, duration, specialty]);
+
+  const checkDate = (ads) => {
+    if (start_date_timestamp_filter) {
+      return ads.filter(ad => ad.start_date >= start_date_timestamp_filter)
+    } else {
+      return ads
+    }
+  }
 
   return (
     <main>
       {ads.length === 0 ? (
         <div className="ads no-results">
           <p>Aucun résultats pour votre recherche</p>
-          <p>Nouvelle recherche</p>
-          <Searchbar />
+          <Link to='/annonces' className='btn-new-search'>Nouvelle recherche</Link>
         </div>
       ) : (
         <div className="ads ads-container">
-          {ads.map((ad) => (
+          {checkDate(ads).map((ad) => (
             <AdsItemSmall key={ad.id} ad={ad} />
           ))}
         </div>

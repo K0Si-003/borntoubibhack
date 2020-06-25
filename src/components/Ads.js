@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import firebase from "../firebase";
-import AdsItemSmall from "./AdsItemSmall";
-import "../styles/Ads.css";
-import Searchbar from "./Searchbar";
+import React, { useState, useEffect } from 'react';
+import firebase from '../firebase';
+import AdsItemSmall from './AdsItemSmall';
+import '../styles/Ads.css';
+import Searchbar from "../components/Searchbar";
 
 const Ads = (props) => {
   const [ads, setAds] = useState([]);
@@ -19,19 +19,25 @@ const Ads = (props) => {
           );
         });
 
-      return () => unsubscribe();
-  }, []);
-
-  return (
-    <main>
-        <div className="ads ads-container">
-          <Searchbar />
-          {ads.map((ad) => (
-            <AdsItemSmall key={ad.id} ad={ad} />
-          ))}
-        </div>
-    </main>
-  );
+    return () =>unsubscribe()
+  }, [])
+ 
+    return (
+        <main className='ads ads-container'>
+            <Searchbar 
+              datas={props.datas} 
+              handleSpecialtyChanged={props.handleSpecialtyChanged}
+              renderSpecialtiesSuggestion={props.renderSpecialtiesSuggestion}
+              handleSpecialtiesSelected={props.handleSpecialtiesSelected}
+              handlePlaceChanged={props.handlePlaceChanged}
+              renderSpecialtiesSuggestions={props.renderSpecialtiesSuggestions}
+              handleSuggestionPlaces={props.handleSuggestionPlaces}
+              handleSubmit={props.handleSubmit}
+              handleChangeAdvanced={props.handleChangeAdvanced}
+            />
+            {ads.map((ad)=> <AdsItemSmall ad={ad}/>)}
+        </main>
+    );
 };
 
 export default Ads;

@@ -7,7 +7,8 @@ import MapComponent from '../components/Map';
 import firebase from '../firebase';
 import '../styles/home.css'
 
-const Home = () => {
+const Home = (props) => {
+
 
   const [ads, setAds] = useState([])
 
@@ -22,11 +23,23 @@ const Home = () => {
 
   return (
     <main>
-      <div className='textintro' 
-      style={{fontFamily: 'Nunito', color: '#0596DE'}}>
-        <Typewriter string='Toi aussi, jeune remplaçant...' speed={80} />
+      <div className='textintro'
+        style={{ fontFamily: 'Nunito', color: '#0596DE' }}>
+        <Typewriter string='Toi aussi, jeune remplaçant... 😄' speed={80} loop={true} />
       </div>
-      <Searchbar />
+      <Searchbar datas={props.datas}
+        handleSpecialtyChanged={props.handleSpecialtyChanged}
+        renderSpecialtiesSuggestion={props.renderSpecialtiesSuggestion}
+        handleSpecialtiesSelected={props.handleSpecialtiesSelected}
+        handlePlaceChanged={props.handlePlaceChanged}
+        renderSpecialtiesSuggestions={props.renderSpecialtiesSuggestions}
+        handleSuggestionPlaces={props.handleSuggestionPlaces}
+        handleSubmit={props.handleSubmit}
+        handleChangeAdvanced={props.handleChangeAdvanced}
+        handleClick={props.handleClick}
+        handleChangecheck={props.handleChangecheck}
+      />
+      {/* </DatasContextProvider> */}
       <MapComponent adsDetails={ads} />
     </main>
   );
