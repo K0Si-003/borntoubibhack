@@ -12,44 +12,44 @@ const Searchbar = () => {
     const [specialty, setSpecialty] = useState('')
     const [suggestionsSpecialties, setSuggestionsSpecialties] = useState([])
 
-/* Autocomplete for specialty */
+    /* Autocomplete for specialty */
     const handleSpecialtyChanged = (e) => {
         const value = e.target.value;
         let autocompletions = [];
         if (value.length > 0) {
-          const regex = new RegExp(`^${value}`, 'i');
-          autocompletions = specialties.sort().filter(v => regex.test(v));
+            const regex = new RegExp(`^${value}`, 'i');
+            autocompletions = specialties.sort().filter(v => regex.test(v));
         }
-            setSpecialty(value);
-            setSuggestionsSpecialties(autocompletions)
-      }
+        setSpecialty(value);
+        setSuggestionsSpecialties(autocompletions)
+    }
 
     const renderSpecialtiesSuggestions = () => {
         if (suggestionsSpecialties.length === 0) {
-          return null;
+            return null;
         }
         return (
-          <ul className='autocomplete'>
-            {suggestionsSpecialties.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSpecialtiesSelected(item)}>{item}</li>)}
-          </ul>
+            <ul className='autocomplete'>
+                {suggestionsSpecialties.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSpecialtiesSelected(item)}>{item}</li>)}
+            </ul>
         );
-      }
+    }
 
     const handleSpecialtiesSelected = (value) => {
         setSpecialty(value);
         setSuggestionsSpecialties([]);
     }
 
-/* Autocomplete for location */
+    /* Autocomplete for location */
     const handlePlaceChanged = (e) => {
         const value = e.target.value;
         let autocompletions = [];
         if (value.length > 0) {
-        const regex = new RegExp(`^${value}`, 'i');
-        autocompletions = departments.sort().filter(v => regex.test(v));
+            const regex = new RegExp(`^${value}`, 'i');
+            autocompletions = departments.sort().filter(v => regex.test(v));
         }
-            setPlace(value);
-            setSuggestionsPlaces(autocompletions)
+        setPlace(value);
+        setSuggestionsPlaces(autocompletions)
     }
 
     const renderPlacesSuggestions = () => {
@@ -57,9 +57,9 @@ const Searchbar = () => {
             return null;
         }
         return (
-        <ul className='autocomplete'>
-            {suggestionsPlaces.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSuggestionPlaces(item)}>{item}</li>)}
-        </ul>
+            <ul className='autocomplete'>
+                {suggestionsPlaces.slice(0, 5).map((item, index) => <li key={index} onClick={() => handleSuggestionPlaces(item)}>{item}</li>)}
+            </ul>
         );
     }
 
@@ -71,29 +71,29 @@ const Searchbar = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
     }
-    
+
     return (
         <form className='search-bar' onSubmit={(e) => handleSubmit(e)}>
             <label className='search-label-specialty' htmlFor='search-input'>
                 <input
-                className='search-input-specialty'
-                type='text' placeholder='Ma spécialité'
-                value={specialty}
-                onChange={handleSpecialtyChanged}
+                    className='search-input-specialty'
+                    type='text' placeholder='Ma spécialité'
+                    value={specialty}
+                    onChange={handleSpecialtyChanged}
                 />
                 {renderSpecialtiesSuggestions()}
-                </label>
-                <i className="fas fa-search search-icon"></i>
+            </label>
+            <i className="fas fa-search search-icon"></i>
             <label className='search-label-place' htmlFor='search-input'>
                 <input
-                type='text' placeholder='Mon lieu géographique'
-                value={place}
-                onChange={handlePlaceChanged}
+                    type='text' placeholder='Mon lieu géographique'
+                    value={place}
+                    onChange={handlePlaceChanged}
                 />
                 {renderPlacesSuggestions()}
-                </label>
-                <i className='fas fa-map-marker-alt location-icon' />
-                <input
+            </label>
+            <i className='fas fa-map-marker-alt location-icon' />
+            <input
                 type='submit'
                 className='input-submit'
                 value='Rechercher' />

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import firebase from '../firebase';
-import AdsItemSmall from './AdsItemSmall'
+import AdsItemSmall from './AdsItemSmall';
 import Footer from './Footer';
 import '../styles/Ads.css';
+
 
 const Ads = () => {
 
@@ -19,10 +20,10 @@ const Ads = () => {
   }, [])
  
     return (
-        <div className='ads ads-container'>
+
+        <main className='ads ads-container'>
             {ads.map((ad)=> <AdsItemSmall ad={ad}/>)}
-            <Footer/>
-        </div>
+        </main>
     );
 };
 
