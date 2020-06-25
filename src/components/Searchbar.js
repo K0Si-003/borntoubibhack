@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import AdvancedSearch from './AdvancedSearch';
 
 
-
 export const Searchbar = (props) => {
 
 

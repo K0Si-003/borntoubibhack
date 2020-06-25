@@ -34,6 +34,8 @@ class App extends React.Component {
       suggestionsSpecialties: [],
       date: null,
       duration: null,
+      search: false,
+      tabLocalStorage: [{}],
       accomodation: false
     };
   }
@@ -87,6 +89,7 @@ class App extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
+    this.setState({search: true})
   }
 
   /* Advanced search */
@@ -95,6 +98,17 @@ class App extends React.Component {
   }
   handleChangecheck = (e) => {
     this.setState({ [e.target.name]: e.target.checked })
+  }
+
+  handleClick = (e) => {
+    this.setState({tabLocalStorage:
+      [...this.state.tabLocalStorage,
+      {place: this.state.place,
+      specialty: this.state.specialty,
+      date: this.state.date,
+      duration: this.state.duration}]
+    })
+    localStorage.setItem('localSearch', JSON.stringify(this.state.tabLocalStorage));
   }
 
   render() {
@@ -114,6 +128,7 @@ class App extends React.Component {
                 handleSuggestionPlaces={this.handleSuggestionPlaces}
                 handleSubmit={this.handleSubmit}
                 handleChangeAdvanced={this.handleChangeAdvanced}
+                handleClick={this.handleClick}
                 handleChangecheck={this.handleChangecheck}
               />
             </Route>
