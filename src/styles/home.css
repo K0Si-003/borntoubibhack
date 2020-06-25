@@ -1,9 +1,9 @@
-.textintro {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  margin: 0 0;
-  font-size: 2em;
-  height: 10vh;
+ .textintro {
+  /* padding-top: 5vh;
+  padding-bottom: 5vh; */
+  font-size: 1em;
+  height: 2vh;
+  margin: 20px 20px;
 }
 
 @media screen and (max-width: 750px) {

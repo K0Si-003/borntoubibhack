@@ -3,20 +3,21 @@ import firebase from '../firebase';
 
 export default function AdsItem(props) {
 
-const [ad, setAd] = useState({});
+  const [ad, setAd] = useState({});
 
-const currentId = props.match.params.id;
+  const currentId = props.match.params.id;
 
-useEffect(() => {
-  firebase.firestore().collection('adds').doc(currentId).get().then(doc => {
-    setAd(doc.data())
-  })}, [currentId])
+  useEffect(() => {
+    firebase.firestore().collection('adds').doc(currentId).get().then(doc => {
+      setAd(doc.data())
+    })
+  }, [currentId])
 
-return (
-  <div>
-    <h1>{ad.firstname}</h1>
-</div>
+  return (
+    <main>
+      <h1>{ad.firstname}</h1>
+    </main>
 
 
-);
+  );
 }
