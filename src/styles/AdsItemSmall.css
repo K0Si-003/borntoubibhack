@@ -20,6 +20,7 @@
 .card .ad-info {
   display: flex;
   flex-direction: column;
+  justify-content: left;
 }
 
 .card .ad-info .start-date {

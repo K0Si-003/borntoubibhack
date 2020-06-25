@@ -24,7 +24,9 @@ export default function AdsItemSmall({ ad }) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            <p>{ad.firstname} {ad.lastname} </p>
+            <p>
+              {ad.firstname} {ad.lastname}{" "}
+            </p>
           </Typography>
           <Typography gutterBottom variant="h6" component="h2">
             {ad.specialty}
@@ -40,10 +42,8 @@ export default function AdsItemSmall({ ad }) {
               />
               <p>Date de début : {start_date}</p>
             </div>
-            <p>
-              Durée : {ad.duration} {ad.unit === "day" ? "jours" : "mois"}
-            </p>
-  <p>{ad.isPonctual ? 'Ponctuel' : 'Réccurent'}</p>
+            <p>Durée : {ad.duration} {ad.unit === "day" ? "jours" : "mois"}</p>
+            <p>{ad.isPonctual ? "Ponctuel" : "Réccurent"}</p>
           </div>
         </CardContent>
       </CardActionArea>
