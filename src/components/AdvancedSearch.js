@@ -87,7 +87,7 @@ class AdvancedSearch extends Component {
 
   render() {
     return (
-      <div>
+      <div className='main-advanced-search'>
         <button className='btn-advanced-search' onClick={this.showMenu}>
           Recherche avancée
         </button>

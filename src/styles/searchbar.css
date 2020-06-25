@@ -175,6 +175,11 @@
     display: none;
 }
 
+.main-advanced-search {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
 @media screen and (max-width: 800px) {
     .main-search {
         flex-direction: column;
