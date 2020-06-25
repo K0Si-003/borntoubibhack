@@ -4,17 +4,20 @@ import AdsItemSmall from './AdsItemSmall';
 import '../styles/Ads.css';
 import Searchbar from "../components/Searchbar";
 
-
-const Ads = () => {
-
-  const [ads, setAds] = useState([])
+const Ads = (props) => {
+  const [ads, setAds] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = firebase.firestore().collection('adds').onSnapshot(s => {
-      setAds(s.docs.map(ad => {
-        return {id: ad.id, ...ad.data()}
-      }))
-    })
+      const unsubscribe = firebase
+        .firestore()
+        .collection("adds")
+        .onSnapshot((s) => {
+          setAds(
+            s.docs.map((ad) => {
+              return { id: ad.id, ...ad.data() };
+            })
+          );
+        });
 
     return () =>unsubscribe()
   }, [])

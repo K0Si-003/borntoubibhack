@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Ads from './components/Ads';
 import AdsItem from './components/AdsItem';
+import AdsFiltered from './components/AdsFiltered'
+import Favorites from './components/Favorites';
 import FavoriteSearch from './components/FavoriteSearch';
 import FAQ from './components/FAQ';
 import departmentsList from './departments.json';

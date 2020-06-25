@@ -1,7 +1,11 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import Searchbar from "../components/Searchbar";
+import { Typewriter } from 'react-typewriting-effect'
+import 'react-typewriting-effect/dist/index.css';
+import '../styles/home.css'
 import MapComponent from '../components/Map';
 import firebase from '../firebase';
+import '../styles/home.css'
 
 const Home = (props) => {
 
@@ -11,7 +15,7 @@ const Home = (props) => {
   useEffect(() => {
     const loadAd = firebase.firestore().collection('adds').onSnapshot(s => {
       setAds(s.docs.map(ad => {
-        return {id: ad.id, ...ad.data()}
+        return { id: ad.id, ...ad.data() }
       }))
     })
     return () => loadAd()

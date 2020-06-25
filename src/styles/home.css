@@ -1,14 +1,18 @@
-npm .textintro {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  margin: 0 0;
-  font-size: 2em;
-  height: 10vh;
+ .textintro {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  font-size: 1.5em;
+  height: 2vh;
+  margin: 20px 20px;
+  text-align: center;
+  font-family: 'Nunito'; 
+  color: '#0596DE';
+  font-weight: bold;
 }
 
 @media screen and (max-width: 750px) {
   /* MEDIA QUERIES BIO */
   .textintro {
-    font-size: 1.5em;
+    font-size: 1em;
   }
 }
