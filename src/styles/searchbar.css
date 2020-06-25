@@ -3,6 +3,14 @@
     margin: auto;
     display: flex;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-search {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
 }
 
 .search-bar input[type=text] {
@@ -14,7 +22,8 @@
     background-color: white;
     background-position: 15px 15px;
     background-repeat: no-repeat;
-    padding: 15px 20px 10px 10px;
+    padding: 15px 20px 10px 50px;
+    margin-right: 20px;
     outline: none;
     background-size: 24px;
     color: #005C89;
@@ -66,6 +75,11 @@
     width: 38%;
     border-radius: 10px;
     padding: 0;
+    z-index: 2000;
+}
+
+.autocomplete {
+    z-index: 2000;
 }
 
 .search-bar-place ul li {
@@ -83,10 +97,15 @@
 .search-label-place,
 .search-label-specialty {
     width: 100%;
+    margin-right: 20px;
 }
 
-.main-search {
-    padding-bottom: 100px;
+.search-input-specialty {
+    background-image: url("../images/searchicon-blue.png");
+}
+
+.localization-input-specialty {
+    background-image: url("../images/localization.png");
 }
 
 .search-icon {
@@ -95,7 +114,7 @@
     right: 45px;
     background: none;
     border: none;
-    color: #02a2ef;
+    color: #0596DE;
     font-size: 24px;
 }
 
@@ -109,14 +128,84 @@
     font-size: 24px;
 }
 
-.input-submit {
+.input-submit,
+.btn-advanced-search {
     border-radius: 30px;
+    padding: 0 15px;
+    height: 30px;
+    align-self: center;
     outline: none;
-    border: 1px solid #02a2ef;
+    border: 1px solid #0596DE;
     font-weight: bold;
     color: #02a2ef;
     width: 100px;
     background-color: white;
     font-family: 'Nunito', serif;
     cursor: pointer;
+}
+
+.input-submit {
+    color: white;
+    background-color: #0596DE;
+    height: 50px;
+    width: 120px;
+}
+
+.btn-advanced-search {
+    width: 170px;
+}
+
+.inputs-advanced-search {
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(5, 150, 222, 0.5);
+    border-left: 1px solid rgba(5, 150, 222, 0.5);
+    border-right: 1px solid rgba(5, 150, 222, 0.5);
+    padding-bottom: 20px;
+}
+
+.advanced-search {
+    margin: 0 30px !important;
+}
+
+.date-input {
+    cursor: pointer;
+}
+
+.submit-mobile {
+    display: none;
+}
+
+.main-advanced-search {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .main-search {
+        flex-direction: column;
+    }
+
+    .search-label-place,
+    .search-label-specialty {
+        margin-bottom: 20px;
+    }
+
+    .submit-desktop {
+        display: none;
+    }
+
+    .submit-mobile {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .main-search {
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .autocomplete {
+        width: 80% !important;
+    }
 }

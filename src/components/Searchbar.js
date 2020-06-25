@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import departmentsList from '../departments.json';
 import specialtiesList from '../specialties.json';
+import AdvancedSearch from './AdvancedSearch';
 import '../styles/searchbar.css';
 
 const departments = departmentsList.map(department => `${department.departmentName}, ${department.regionName}`);
@@ -74,29 +75,41 @@ const Searchbar = () => {
 
     return (
         <form className='search-bar' onSubmit={(e) => handleSubmit(e)}>
-            <label className='search-label-specialty' htmlFor='search-input'>
+            <div className='main-search'>
+                <label className='search-label-specialty' htmlFor='search-input'>
+                    <input
+                        className='search-input-specialty'
+                        type='text' placeholder='Ma spécialité'
+                        value={specialty}
+                        onChange={handleSpecialtyChanged}
+                        />
+                        {renderSpecialtiesSuggestions()}
+                    </label>
+
+                    <label className='search-label-place' htmlFor='search-input'>
+                    <input
+                        className='localization-input-specialty'
+                        type='text' placeholder='Mon département'
+                        value={place}
+                        onChange={handlePlaceChanged}
+                    />
+                        {renderPlacesSuggestions()}
+                    </label>
+                    <input
+                        type='submit'
+                        className='input-submit submit-desktop'
+                        value='Rechercher' 
+                    />
+            </div>
+
+            <div className='advanced-search'>
+                <AdvancedSearch />
                 <input
-                    className='search-input-specialty'
-                    type='text' placeholder='Ma spécialité'
-                    value={specialty}
-                    onChange={handleSpecialtyChanged}
+                        type='submit'
+                        className='input-submit submit-mobile'
+                        value='Rechercher' 
                 />
-                {renderSpecialtiesSuggestions()}
-            </label>
-            <i className="fas fa-search search-icon"></i>
-            <label className='search-label-place' htmlFor='search-input'>
-                <input
-                    type='text' placeholder='Mon lieu géographique'
-                    value={place}
-                    onChange={handlePlaceChanged}
-                />
-                {renderPlacesSuggestions()}
-            </label>
-            <i className='fas fa-map-marker-alt location-icon' />
-            <input
-                type='submit'
-                className='input-submit'
-                value='Rechercher' />
+            </div>
         </form>
     );
 };
