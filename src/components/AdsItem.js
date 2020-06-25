@@ -1,12 +1,22 @@
-import React from 'react';
-import Footer from './Footer';
+import React, { useState, useEffect } from 'react';
+import firebase from '../firebase';
 
-const AdsItem = () => {
-    return (
-        <div>
-            <Footer/>
-        </div>
-    );
-};
+export default function AdsItem(props) {
 
-export default AdsItem;
+const [ad, setAd] = useState({});
+
+const currentId = props.match.params.id;
+
+useEffect(() => {
+  firebase.firestore().collection('adds').doc(currentId).get().then(doc => {
+    setAd(doc.data())
+  })}, [currentId])
+
+return (
+  <div>
+    <h1>{ad.firstname}</h1>
+</div>
+
+
+);
+}
