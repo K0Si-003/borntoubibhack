@@ -52,6 +52,7 @@ class AdvancedSearch extends Component {
       showMenu: false,
       date: new Date(),
       day: null
+      
 
     }
 
@@ -105,9 +106,6 @@ class AdvancedSearch extends Component {
                     inputProps: { min: this.getFullDate() }
                   }}
                 />
-
-
-
                 <TextField
                   className='month-input advanced-search'
                   id="month"
@@ -124,6 +122,7 @@ class AdvancedSearch extends Component {
                     </MenuItem>
                   ))}
                 </TextField>
+                
                 <label>Possibilité de logement </label>
                 <input
                   checked={this.props.accomodation}
@@ -131,6 +130,9 @@ class AdvancedSearch extends Component {
                   name="accomodation"
                   onChange={(e) => !this.props.handleChangecheck(e)}
                 />
+                <span className='span-cloche' onClick={this.props.handleClick}>
+                  <i class="fas fa-bell" style={{ marginLeft: "20px"}}></i> Sauvegarder ma recherche
+                </span>
 
 
               </div>
