@@ -35,10 +35,11 @@ class App extends React.Component {
       date: null,
       duration: null,
       search: false,
-      tabLocalStorage: [{}],
       accomodation: false
     };
   }
+ 
+
 
   /* Autocomplete for specialty */
   handleSpecialtyChanged = (e) => {
@@ -89,7 +90,18 @@ class App extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
-    this.setState({search: true})
+    this.setState(
+      {
+      place: '',
+      suggestionsPlaces: [],
+      specialty: '',
+      suggestionsSpecialties: [],
+      date: null,
+      duration: null,
+      search: false,
+      accomodation: false
+    }
+    )
   }
 
   /* Advanced search */
