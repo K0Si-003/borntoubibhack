@@ -166,6 +166,7 @@ class App extends React.Component {
                 handleSuggestionPlaces={this.handleSuggestionPlaces}
                 handleSubmit={this.handleSubmit}
                 handleChangeAdvanced={this.handleChangeAdvanced}
+                handleChangecheck={this.handleChangecheck}
               /></Route>
             <Route exact path='/annonces/search'> <AdsFiltered
               datas={this.state} 

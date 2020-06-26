@@ -34,6 +34,7 @@ const Ads = (props) => {
               handleSuggestionPlaces={props.handleSuggestionPlaces}
               handleSubmit={props.handleSubmit}
               handleChangeAdvanced={props.handleChangeAdvanced}
+              handleChangecheck={props.handleChangecheck}
             />
             {ads.map((ad)=> <AdsItemSmall ad={ad}/>)}
         </main>
