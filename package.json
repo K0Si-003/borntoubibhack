@@ -19,6 +19,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-typewriting-effect": "^1.0.3",
+<<<<<<< HEAD
+=======
+    "reactstrap": "^8.5.1",
+>>>>>>> 3e98f1b8e18fe42dc4527d1d09cf821708b7eba5
     "styled-components": "^5.1.1"
   },
   "scripts": {

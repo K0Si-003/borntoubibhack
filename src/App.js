@@ -33,8 +33,14 @@ class App extends React.Component {
       suggestionsSpecialties: [],
       date: null,
       duration: null,
+<<<<<<< HEAD
       search: false,
       accomodation: false
+=======
+      accomodation: false,
+      tabLocalStorage: [],
+      search: false
+>>>>>>> 3e98f1b8e18fe42dc4527d1d09cf821708b7eba5
     };
   }
 
@@ -88,6 +94,7 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     console.log(this.state);
     this.setState(
       {
@@ -101,6 +108,17 @@ class App extends React.Component {
         accomodation: false
       }
     )
+=======
+    // this.setState( {
+    //   place: '',
+    //   suggestionsPlaces: [],
+    //   specialty: '',
+    //   suggestionsSpecialties: [],
+    //   date: null,
+    //   duration: null,
+    //   accomodation: false,
+    // })
+>>>>>>> 3e98f1b8e18fe42dc4527d1d09cf821708b7eba5
   }
 
   /* Advanced search */
