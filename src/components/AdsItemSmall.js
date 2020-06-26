@@ -62,8 +62,7 @@ export default function AdsItemSmall({ ad }) {
           </div>
         </CardContent>
       </CardActionArea>
-      <CardActions className = 'CardActions'>
-        
+      <CardActions className = 'CardActions '>
           <Button size="small" color="primary">
           <Link to={`/annonces/${ad.id}`} className='link-ad' target='_blank'>
             Voir les détails de l'annonce

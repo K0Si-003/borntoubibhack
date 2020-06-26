@@ -33,8 +33,9 @@ class App extends React.Component {
       suggestionsSpecialties: [],
       date: null,
       duration: null,
-      search: false,
-      accomodation: false
+      accomodation: false,
+      tabLocalStorage: [],
+      search: false
     };
   }
  
@@ -88,25 +89,22 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
-    this.setState(
-      {
-      place: '',
-      suggestionsPlaces: [],
-      specialty: '',
-      suggestionsSpecialties: [],
-      date: null,
-      duration: null,
-      search: false,
-      accomodation: false
-    }
-    )
+    // this.setState( {
+    //   place: '',
+    //   suggestionsPlaces: [],
+    //   specialty: '',
+    //   suggestionsSpecialties: [],
+    //   date: null,
+    //   duration: null,
+    //   accomodation: false,
+    // })
   }
 
   /* Advanced search */
   handleChangeAdvanced = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
+
   handleChangecheck = (e) => {
     this.setState({ [e.target.name]: !!e.target.checked })
   }
@@ -120,6 +118,19 @@ class App extends React.Component {
       duration: this.state.duration}]
     })
     localStorage.setItem('localSearch', JSON.stringify(this.state.tabLocalStorage));
+  }
+
+  handleClick = (e) => {
+    const { date, specialty, place, duration } = this.state;
+    let existingSearches = localStorage.getItem('localSearch');
+    if (existingSearches) {
+      let parsedSearches = JSON.parse(existingSearches);
+      parsedSearches.push({date, specialty, place, duration});
+      localStorage.setItem('localSearch', JSON.stringify(parsedSearches));
+    } else {
+      localStorage.setItem('localSearch', JSON.stringify([{ date, specialty, place, duration }]));
+    }
+    
   }
 
   render() {
@@ -141,6 +152,7 @@ class App extends React.Component {
                 handleChangeAdvanced={this.handleChangeAdvanced}
                 handleClick={this.handleClick}
                 handleChangecheck={this.handleChangecheck}
+                handleClick={this.handleClick}
               />
             </Route>
             <Route exact path='/annonces'>
