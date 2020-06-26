@@ -184,6 +184,21 @@
 .main-advanced-search {
     text-align: center;
     padding-bottom: 30px;
+    padding-top: 20px;
+    align-items: self-star
+}
+
+.save-research {
+    position: relative;
+    bottom: 90px;
+    left: 380px;
+    color: #0596DE;
+}
+
+.inputs-advanced-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 800px) {
@@ -214,4 +229,15 @@
     .autocomplete {
         width: 80% !important;
     }
+
+    .inputs-advanced-search {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .inputs-advanced-search input {
+      margin-top: 25px;
+    }
+
 }

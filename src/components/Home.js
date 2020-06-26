@@ -36,6 +36,7 @@ const Home = (props) => {
         handleSuggestionPlaces={props.handleSuggestionPlaces}
         handleSubmit={props.handleSubmit}
         handleChangeAdvanced={props.handleChangeAdvanced}
+        handleClick={props.handleClick}
         handleChangecheck={props.handleChangecheck}
         handleClick={props.handleClick}
       />
