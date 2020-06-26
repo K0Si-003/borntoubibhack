@@ -1,10 +1,13 @@
  .textintro {
-  /* padding-top: 5vh;
-  padding-bottom: 5vh; */
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   font-size: 1.5em;
   height: 2vh;
   margin: 20px 20px;
   text-align: center;
+  font-family: 'Nunito'; 
+  color: '#0596DE';
+  font-weight: bold;
 }
 
 @media screen and (max-width: 750px) {

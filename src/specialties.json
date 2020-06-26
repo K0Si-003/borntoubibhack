@@ -1,39 +1,39 @@
 [
     {
-      "specialty" : "Addictologie"
+      "specialty" : "Addictologue"
     },
     {
-        "specialty" : "Alcoologie"
+        "specialty" : "Alcoologue"
     },
     {
-        "specialty" : "Algologie"
+        "specialty" : "Algologue"
     },
     {
-        "specialty" : "Allergologie"
+        "specialty" : "Allergologue"
     },
     {
         "specialty" : "Anatomie et cytologie pathologiques"
     },
     {
-        "specialty" : "Andrologie"
+        "specialty" : "Andrologue"
     },
     {
-        "specialty" : "Anesthésiologie-réanimation chirurgicale"
+        "specialty" : "Anesthésiologue-réanimation chirurgicale"
     },
     {
-        "specialty" : "Angiologie"
+        "specialty" : "Angiologue"
     },
     {
-        "specialty" : "Biochimie"
+        "specialty" : "Biochimiste"
     },
     {
         "specialty" : "Biologie médicale et physiologie"
     },
     {
-        "specialty" : "Cardiologie"
+        "specialty" : "Cardiologue"
     },
     {
-        "specialty" : "Chirurgie"
+        "specialty" : "Chirurgien"
     },
     {
         "specialty" : "Chirurgie digestive"
@@ -66,19 +66,19 @@
         "specialty" : "Coronarographie"
     },
     {
-        "specialty" : "Dentisterie"
+        "specialty" : "Dentiste"
     },
     {
-        "specialty" : "Dermatologie et vénéréologie"
+        "specialty" : "Dermatologue et vénéréologue"
     },
     {
-        "specialty" : "Endocrinologie et métabolisme"
+        "specialty" : "Endocrinologue et métabolisme"
     },
     {
         "specialty" : "Explorations fonctionnelles"
     },
     {
-        "specialty" : "Gastro-entérologie et hépatologie"
+        "specialty" : "Gastro-entérologue et hépatologie"
     },
     {
         "specialty" : "Génétique"
@@ -87,10 +87,10 @@
         "specialty" : "Gériatrie"
     },
     {
-        "specialty" : "Gynécologie-obstétrique"
+        "specialty" : "Gynécologue-obstétricien"
     },
     {
-        "specialty" : "Hématologie"
+        "specialty" : "Hématologue"
     },
     {
         "specialty" : "Hygiène hospitalière"
@@ -114,126 +114,126 @@
         "specialty" : "Médecine nucléaire"
     },
     {
-        "specialty" : "Médecine généraliste"
+        "specialty" : "Médecin généraliste"
     },
     {
-        "specialty" : "Néonatologie"
+        "specialty" : "Néonatologue"
     },
     {
-        "specialty" : "Néphrologie"
+        "specialty" : "Néphrologue"
     },
     {
-        "specialty" : "Neurochirurgie"
+        "specialty" : "Neurochirurgien"
     },
     {
-        "specialty" : "Neurologie"
+        "specialty" : "Neurologue"
     },
     {
-        "specialty" : "Neuropédiatrie"
+        "specialty" : "Neuropédiatre"
     },
     {
-        "specialty" : "Neuropsychiatrie"
+        "specialty" : "Neuropsychiatre"
     },
     {
-        "specialty" : "Odontologie"
+        "specialty" : "Odontologue"
     },
     {
-        "specialty" : "Oncologie"
+        "specialty" : "Oncologue"
     },
     {
-        "specialty" : "Ophtalmologie"
+        "specialty" : "Ophtalmologue"
     },
     {
-        "specialty" : "Orthodontie"
+        "specialty" : "Orthodontiste"
     },
     {
-        "specialty" : "Orthopédie"
+        "specialty" : "Orthopédiste"
     },
     {
-        "specialty" : "Orthophonie"
+        "specialty" : "Orthophoniste"
     },
     {
-        "specialty" : "Orthoptie"
+        "specialty" : "Orthoptiste"
     },
     {
-        "specialty" : "Osthéopathie"
+        "specialty" : "Ostéopathe"
     },
     {
-        "specialty" : "Oto-rhino-laryngologie"
+        "specialty" : "Oto-rhino-laryngologue"
     },
     {
-        "specialty" : "Otologie"
+        "specialty" : "Otologue"
     },
     {
-        "specialty" : "Otoneurologie"
+        "specialty" : "Otoneurologue"
     },
     {
         "specialty" : "Parodontie"
     },
     {
-        "specialty" : "Parodontologie"
+        "specialty" : "Parodontologue"
     },
     {
-        "specialty" : "Pédiatrie"
+        "specialty" : "Pédiatre"
     },
     {
         "specialty" : "Pédodontie"
     },
     {
-        "specialty" : "Pédopsychiatrie"
+        "specialty" : "Pédopsychiatre"
     },
     {
-        "specialty" : "Pharmacie"
+        "specialty" : "Pharmacien"
     },
     {
-        "specialty" : "Pharmacologie"
+        "specialty" : "Pharmacologiste"
     },
     {
-        "specialty" : "Phlébologie"
+        "specialty" : "Phlébologue"
     },
     {
-        "specialty" : "Pneumologie"
+        "specialty" : "Pneumologue"
     },
     {
-        "specialty" : "Posturologie"
+        "specialty" : "Posturologue"
     },
     {
-        "specialty" : "Proctologie"
+        "specialty" : "Proctologue"
     },
     {
-        "specialty" : "Psychiatrie"
+        "specialty" : "Psychiatre"
     },
     {
         "specialty" : "Radiodiagnostic et imagerie médicale"
     },
     {
-        "specialty" : "Radiologie"
+        "specialty" : "Radiologue"
     },
     {
-        "specialty" : "Radiothérapie"
+        "specialty" : "Radiothérapiste"
     },
     {
         "specialty" : "Réanimation médicale"
     },
     {
-        "specialty" : "Rhumatologie"
+        "specialty" : "Rhumatologue"
     },
     {
         "specialty" : "Santé publique et médecine sociale"
     },
     {
-        "specialty" : "Stomatologie"
+        "specialty" : "Stomatologue"
     },
     {
-        "specialty" : "Strabologie"
+        "specialty" : "Strabologue"
     },
     {
-        "specialty" : "Tabacologie"
+        "specialty" : "Tabacologue"
     },
     {
-        "specialty" : "Urologie"
+        "specialty" : "Urologue"
     },
     {
-        "specialty" : "Vénéréologie"
+        "specialty" : "Vénéréologue"
     }
 ]

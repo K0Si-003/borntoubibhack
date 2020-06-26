@@ -4,3 +4,12 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.ads.no-results {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.ads.no-results p {
+  margin-bottom: 30px;
+}

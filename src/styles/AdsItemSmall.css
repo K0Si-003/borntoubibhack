@@ -2,6 +2,12 @@
   width: 300px;
   margin: 15px;
   height: fit-content;
+  box-shadow: 0 70px 40px -50px rgba(0,0,0,.2),0 3px 20px rgba(0,0,0,.1)!important;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  transition: all .2s ease-in-out;
 }
 
 .card-media {
@@ -32,3 +38,4 @@
 .link-ad:visited {
   color: #3f51b5;
 }
+
