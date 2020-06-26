@@ -124,17 +124,19 @@ class AdvancedSearch extends Component {
                     </MenuItem>
                   ))}
                 </TextField>
-                {this.props.datas.search && 
-                <div className='save-research' onClick={this.props.handleClick}>
-                  <i class="fas fa-bell"></i> Sauvegarder ma recherche
-                </div>}
-                <label>Possibilité de logement </label>
-                <input
-                  checked={this.props.accomodation}
-                  type="checkbox"
-                  name="accomodation"
-                  onChange={(e) => !this.props.handleChangecheck(e)}
-                />
+                <div className='accomodation'>
+                  {this.props.datas.search && 
+                  <div className='save-research' onClick={this.props.handleClick}>
+                    <i class="fas fa-bell"></i> Sauvegarder ma recherche
+                  </div>}
+                  <label>Possibilité de logement </label>
+                  <input
+                    checked={this.props.accomodation}
+                    type="checkbox"
+                    name="accomodation"
+                    onChange={(e) => !this.props.handleChangecheck(e)}
+                  />
+                </div>
 
 
               </div>
