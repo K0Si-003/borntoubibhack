@@ -152,7 +152,6 @@ class App extends React.Component {
                 handleChangeAdvanced={this.handleChangeAdvanced}
                 handleClick={this.handleClick}
                 handleChangecheck={this.handleChangecheck}
-                handleClick={this.handleClick}
               />
             </Route>
             <Route exact path='/annonces'>
