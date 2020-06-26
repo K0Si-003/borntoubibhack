@@ -69,10 +69,6 @@ export default function AdsItemSmall({ ad }) {
             Voir les détails de l'annonce
             </Link>
           </Button>
-        
-        <Button size="small" color="primary">
-          Voir carte
-        </Button>
       </CardActions>
     </Card>
   );
