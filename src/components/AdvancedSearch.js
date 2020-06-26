@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField } from '@material-ui/core';
+import { TextField, Checkbox } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 
 const months = [
@@ -52,7 +52,7 @@ class AdvancedSearch extends Component {
       showMenu: false,
       date: new Date(),
       day: null
-      
+
 
     }
 
@@ -122,19 +122,18 @@ class AdvancedSearch extends Component {
                     </MenuItem>
                   ))}
                 </TextField>
-                
+
                 <label>Possibilité de logement </label>
-                <input
+                <Checkbox
                   checked={this.props.accomodation}
                   type="checkbox"
                   name="accomodation"
                   onChange={(e) => !this.props.handleChangecheck(e)}
                 />
-                <span className='span-cloche' onClick={this.props.handleClick}>
-                  <i class="fas fa-bell" style={{ marginLeft: "20px"}}></i> Sauvegarder ma recherche
-                </span>
-
-
+                <div className='bell' onClick={this.props.handleClick}><span className='span-cloche'></span>
+                  <i class="fas fa-bell" style={{ marginLeft: "20px" }}></i>
+                  <p>Sauvegarder ma recherche</p>
+                </div>
               </div>
             )
             : (

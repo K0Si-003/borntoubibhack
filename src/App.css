@@ -13,15 +13,13 @@
 main {
   flex: 1 0 auto;
 }
-.span-cloche{
-  display: flex;
-  flex-flow: row-reverse;
-  margin-right: 10px;
-  color:#02a2ef;
-  font-size: small;
-  font-family: sans-serif;
-  position: relative;
+
+.bell {
+  position: absolute;
   bottom: 100px;
+  right: 30px;
+  color: #0596DE;
+  cursor: pointer;
 }
 
 footer {
@@ -34,5 +32,18 @@ ul {
 
 a {
   text-decoration: none;
-  
+}
+
+@media screen and (max-width: 800px) {
+  .bell {
+    bottom: 5px !important;
+    right: 0;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .bell {
+    width: 30%;
+    bottom: 90px;
+  }
 }

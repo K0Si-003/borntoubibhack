@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import '../styles/favorites.css'
 
+
 const FavoriteSearch = (props) => {
   const [searches, setSearches] = useState([])
 
