@@ -123,18 +123,16 @@ class AdvancedSearch extends Component {
                   ))}
                 </TextField>
                 
-                <label>Possibilité de logement </label>
+                <label>Logement </label>
                 <input
                   checked={this.props.accomodation}
                   type="checkbox"
                   name="accomodation"
                   onChange={(e) => !this.props.handleChangecheck(e)}
                 />
-                <span className='span-cloche' onClick={this.props.handleClick}>
+                <div className='bell'><span className='span-cloche' onClick={this.props.handleClick}></span>
                   <i class="fas fa-bell" style={{ marginLeft: "20px"}}></i> Sauvegarder ma recherche
-                </span>
-
-
+                </div>
               </div>
             )
             : (
