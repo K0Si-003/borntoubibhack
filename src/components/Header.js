@@ -17,6 +17,7 @@ const Header = () => {
   return (
     <header className='header'>
       <a href='/'><img src={require('../images/logo_white.png')} alt='logo' className='logo-header' /></a>
+      <h1 className='header-title'>DocSearch</h1>
       <div className='right-header-container'>
         <Navbar handleOpen={openBurgerMenu} handleClose={closeBurgerMenu} show={openBurger} />
       </div>
