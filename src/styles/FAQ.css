@@ -1,0 +1,12 @@
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq-title {
+  margin-top: 1em;
+  font-family: Nunito;
+  font-size: 2em;
+  color: #0596DE
+}

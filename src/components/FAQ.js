@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import '../styles/FAQ.css';
 
 const FAQ = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
   return (
-    <main>
+    <main className='faq-container'>
+      <h1 className='faq-title'>FAQ</h1>
       <ExpansionPanel style={{ width: '70%', margin: '20px auto' }}>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}

@@ -148,6 +148,11 @@
     background-color: white;
     font-family: 'Nunito', serif;
     cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.btn-advanced-search:hover {
+  box-shadow: 0px 0px 0px 2px #0596DE;
 }
 
 .input-submit {
@@ -155,6 +160,11 @@
     background-color: #0596DE;
     height: 50px;
     width: 120px;
+    transition: box-shadow 0.2s;
+}
+
+.input-submit:hover {
+  box-shadow: 0px 0px 0px 2px #0596DE;
 }
 
 .btn-advanced-search {
@@ -163,6 +173,7 @@
 
 .inputs-advanced-search {
     padding-top: 20px;
+    border-radius: 10px;
     border-bottom: 1px solid rgba(5, 150, 222, 0.5);
     border-left: 1px solid rgba(5, 150, 222, 0.5);
     border-right: 1px solid rgba(5, 150, 222, 0.5);
@@ -183,6 +194,7 @@
 }
 
 .main-advanced-search {
+  margin-top: 1.2em;
     text-align: center;
     padding-bottom: 30px;
     padding-top: 20px;
