@@ -16,7 +16,7 @@ import moment from "moment";
 
 export default function AdsItemSmall({ ad }) {
   const timestamp = ad.start_date.seconds;
-  const start_date = moment.unix(timestamp).format("DD MMMM YYYY");
+  const start_date = moment.unix(timestamp).format("DD/MM/YYYY");
 
   return (
     <Card className="card">
