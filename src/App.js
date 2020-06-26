@@ -34,9 +34,12 @@ class App extends React.Component {
       date: null,
       duration: null,
       accomodation: false,
-      tabLocalStorage: []
+      tabLocalStorage: [],
+      search: false
     };
   }
+ 
+
 
   /* Autocomplete for specialty */
   handleSpecialtyChanged = (e) => {
@@ -103,7 +106,18 @@ class App extends React.Component {
   }
 
   handleChangecheck = (e) => {
-    this.setState({ [e.target.name]: e.target.checked })
+    this.setState({ [e.target.name]: !!e.target.checked })
+  }
+
+  handleClick = (e) => {
+    this.setState({tabLocalStorage:
+      [...this.state.tabLocalStorage,
+      {place: this.state.place,
+      specialty: this.state.specialty,
+      date: this.state.date,
+      duration: this.state.duration}]
+    })
+    localStorage.setItem('localSearch', JSON.stringify(this.state.tabLocalStorage));
   }
 
   handleClick = (e) => {
@@ -136,6 +150,7 @@ class App extends React.Component {
                 handleSuggestionPlaces={this.handleSuggestionPlaces}
                 handleSubmit={this.handleSubmit}
                 handleChangeAdvanced={this.handleChangeAdvanced}
+                handleClick={this.handleClick}
                 handleChangecheck={this.handleChangecheck}
                 handleClick={this.handleClick}
               />

@@ -24,13 +24,7 @@ const Ads = (props) => {
         .where("duration", "==", duration)
         .where("departement", "==", departement)
         .where("accomodation", "==", true)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (specialty && accomodation && departement) {
@@ -40,13 +34,7 @@ const Ads = (props) => {
         .where("specialty", "==", specialty)
         .where("departement", "==", departement)
         .where("accomodation", "==", true)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (accomodation && departement && duration) {
@@ -56,13 +44,7 @@ const Ads = (props) => {
         .where("duration", "==", duration)
         .where("departement", "==", departement)
         .where("accomodation", "==", true)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (specialty && accomodation && duration) {
@@ -72,13 +54,7 @@ const Ads = (props) => {
         .where("specialty", "==", specialty)
         .where("duration", "==", duration)
         .where("accomodation", "==", true)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (specialty && departement && duration) {
@@ -102,13 +78,7 @@ const Ads = (props) => {
         .collection("adds")
         .where("duration", "==", duration)
         .where("departement", "==", departement)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (specialty && duration) {
@@ -117,13 +87,7 @@ const Ads = (props) => {
         .collection("adds")
         .where("specialty", "==", specialty)
         .where("duration", "==", duration)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (accomodation && duration) {
@@ -132,13 +96,7 @@ const Ads = (props) => {
         .collection("adds")
         .where("duration", "==", duration)
         .where("accomodation", "==", true)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (accomodation && departement) {
@@ -147,13 +105,7 @@ const Ads = (props) => {
         .collection("adds")
         .where("departement", "==", departement)
         .where("accomodation", "==", true)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (specialty && departement) {
@@ -162,13 +114,7 @@ const Ads = (props) => {
         .collection("adds")
         .where("specialty", "==", specialty)
         .where("departement", "==", departement)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (accomodation && specialty) {
@@ -177,13 +123,7 @@ const Ads = (props) => {
         .collection("adds")
         .where("specialty", "==", specialty)
         .where("accomodation", "==", true)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (specialty) {
@@ -191,13 +131,7 @@ const Ads = (props) => {
         .firestore()
         .collection("adds")
         .where("specialty", "==", specialty)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (departement) {
@@ -205,13 +139,7 @@ const Ads = (props) => {
         .firestore()
         .collection("adds")
         .where("departement", "==", departement)
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     } else if (duration) {
@@ -219,13 +147,7 @@ const Ads = (props) => {
       .firestore()
       .collection("adds")
       .where("duration", "==", duration)
-      .onSnapshot((s) => {
-        setAds(
-          s.docs.map((ad) => {
-            return { id: ad.id, ...ad.data() };
-          })
-        );
-      });
+      .onSnapshot(handleSnapshot);
 
     return () => unsubscribe();
     } else if (accomodation) {
@@ -233,31 +155,29 @@ const Ads = (props) => {
       .firestore()
       .collection("adds")
       .where("accomodation", "==", true)
-      .onSnapshot((s) => {
-        setAds(
-          s.docs.map((ad) => {
-            return { id: ad.id, ...ad.data() };
-          })
-        );
-      });
+      .onSnapshot(handleSnapshot);
 
     return () => unsubscribe();
     } else {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
-        .onSnapshot((s) => {
-          setAds(
-            s.docs.map((ad) => {
-              return { id: ad.id, ...ad.data() };
-            })
-          );
-        });
+        .onSnapshot(handleSnapshot);
 
       return () => unsubscribe();
     }
   }, [accomodation, departement, duration, specialty]);
 
+  const handleSnapshot = (s) => {
+    const data = s.docs
+    .map((ad) => {
+      return { id: ad.id, ...ad.data() };
+    })
+    if (data.length === 0) {
+      
+    } 
+    setAds(data);
+  }
   const checkDate = (ads) => {
     if (start_date_timestamp_filter) {
       return ads.filter(ad => ad.start_date >= start_date_timestamp_filter)

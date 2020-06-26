@@ -186,6 +186,19 @@
     padding-bottom: 30px;
 }
 
+.save-research {
+    position: relative;
+    bottom: 90px;
+    left: 380px;
+    color: #0596DE;
+}
+
+.inputs-advanced-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 800px) {
     .main-search {
         flex-direction: column;
@@ -214,4 +227,15 @@
     .autocomplete {
         width: 80% !important;
     }
+
+    .inputs-advanced-search {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .inputs-advanced-search input {
+      margin-top: 25px;
+    }
+
 }
