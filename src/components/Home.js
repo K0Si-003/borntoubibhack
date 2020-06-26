@@ -25,7 +25,7 @@ const Home = (props) => {
     <main>
       <article className='textintro'
         style={{ fontFamily: 'Nunito', color: '#0596DE' }}>
-        <Typewriter string='Toi aussi, jeune remplaçant... 😄' speed={80} loop={true} />
+        <Typewriter string='Toi aussi, jeune remplaçant... 😄' speed={80} />
       </article>
       <Searchbar datas={props.datas}
         handleSpecialtyChanged={props.handleSpecialtyChanged}
