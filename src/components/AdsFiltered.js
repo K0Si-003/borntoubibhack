@@ -200,7 +200,7 @@ const Ads = (props) => {
             ))}
           </div>
         )}
-    </main>
+    </main> 
   );
 };
 

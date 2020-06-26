@@ -13,15 +13,3 @@
 .ads.no-results p {
   margin-bottom: 30px;
 }
-
-#root > div > main > div{
-  box-shadow: 0 70px 40px -50px rgba(0,0,0,.2),0 3px 20px rgba(0,0,0,.1)!important;
-}
-#root > div > main > div:hover{
-  transform: scale(1.05);
-}
-
-
-#root > div > main > div:hover{
-  transition: all .2s ease-in-out;
-}
