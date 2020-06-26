@@ -9,7 +9,6 @@ import Home from './components/Home';
 import Ads from './components/Ads';
 import AdsItem from './components/AdsItem';
 import AdsFiltered from './components/AdsFiltered'
-import Favorites from './components/Favorites';
 import FavoriteSearch from './components/FavoriteSearch';
 import FAQ from './components/FAQ';
 import departmentsList from './departments.json';
@@ -34,11 +33,13 @@ class App extends React.Component {
       suggestionsSpecialties: [],
       date: null,
       duration: null,
-      search: false,
-      tabLocalStorage: [{}],
-      accomodation: false
+      accomodation: false,
+      tabLocalStorage: [],
+      search: false
     };
   }
+ 
+
 
   /* Autocomplete for specialty */
   handleSpecialtyChanged = (e) => {
@@ -88,16 +89,24 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
-    this.setState({search: true})
+    // this.setState( {
+    //   place: '',
+    //   suggestionsPlaces: [],
+    //   specialty: '',
+    //   suggestionsSpecialties: [],
+    //   date: null,
+    //   duration: null,
+    //   accomodation: false,
+    // })
   }
 
   /* Advanced search */
   handleChangeAdvanced = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
+
   handleChangecheck = (e) => {
-    this.setState({ [e.target.name]: e.target.checked })
+    this.setState({ [e.target.name]: !!e.target.checked })
   }
 
   handleClick = (e) => {
@@ -109,6 +118,19 @@ class App extends React.Component {
       duration: this.state.duration}]
     })
     localStorage.setItem('localSearch', JSON.stringify(this.state.tabLocalStorage));
+  }
+
+  handleClick = (e) => {
+    const { date, specialty, place, duration } = this.state;
+    let existingSearches = localStorage.getItem('localSearch');
+    if (existingSearches) {
+      let parsedSearches = JSON.parse(existingSearches);
+      parsedSearches.push({date, specialty, place, duration});
+      localStorage.setItem('localSearch', JSON.stringify(parsedSearches));
+    } else {
+      localStorage.setItem('localSearch', JSON.stringify([{ date, specialty, place, duration }]));
+    }
+    
   }
 
   render() {
@@ -130,6 +152,7 @@ class App extends React.Component {
                 handleChangeAdvanced={this.handleChangeAdvanced}
                 handleClick={this.handleClick}
                 handleChangecheck={this.handleChangecheck}
+                handleClick={this.handleClick}
               />
             </Route>
             <Route exact path='/annonces'>

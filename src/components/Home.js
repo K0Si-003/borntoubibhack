@@ -38,6 +38,7 @@ const Home = (props) => {
         handleChangeAdvanced={props.handleChangeAdvanced}
         handleClick={props.handleClick}
         handleChangecheck={props.handleChangecheck}
+        handleClick={props.handleClick}
       />
       {/* </DatasContextProvider> */}
       <MapComponent adsDetails={ads} />
