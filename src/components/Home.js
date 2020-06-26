@@ -23,10 +23,10 @@ const Home = (props) => {
 
   return (
     <main>
-      <div className='textintro'
+      <article className='textintro'
         style={{ fontFamily: 'Nunito', color: '#0596DE' }}>
         <Typewriter string='Toi aussi, jeune remplaçant... 😄' speed={80} loop={true} />
-      </div>
+      </article>
       <Searchbar datas={props.datas}
         handleSpecialtyChanged={props.handleSpecialtyChanged}
         renderSpecialtiesSuggestion={props.renderSpecialtiesSuggestion}
