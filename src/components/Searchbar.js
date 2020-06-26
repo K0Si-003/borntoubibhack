@@ -48,6 +48,7 @@ export const Searchbar = (props) => {
                     datas={props.datas}
                     handleChangeAdvanced={props.handleChangeAdvanced}
                     handleChangecheck={props.handleChangecheck}
+                    handleClick={props.handleClick}
                 />
                 <Link to="/annonces/search">
                     <input

@@ -16,7 +16,7 @@ import moment from "moment";
 
 export default function AdsItemSmall({ ad }) {
   const timestamp = ad.start_date.seconds;
-  const start_date = moment.unix(timestamp).format("DD MMMM YYYY");
+  const start_date = moment.unix(timestamp).format("DD/MM/YYYY");
 
   return (
     <Card className="card">
@@ -62,8 +62,7 @@ export default function AdsItemSmall({ ad }) {
           </div>
         </CardContent>
       </CardActionArea>
-      <CardActions className = 'CardActions'>
-        
+      <CardActions className = 'CardActions '>
           <Button size="small" color="primary">
           <Link to={`/annonces/${ad.id}`} className='link-ad' target='_blank'>
             Voir les détails de l'annonce

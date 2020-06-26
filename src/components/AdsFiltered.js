@@ -5,7 +5,6 @@ import "../styles/AdsFiltered.css";
 import { Link } from 'react-router-dom'
 
 const Ads = (props) => {
-  console.log(props.datas)
   const [ads, setAds] = useState([]);
   const duration = props.datas.duration;
   const specialty = props.datas.specialty;
