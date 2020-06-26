@@ -130,11 +130,9 @@ class AdvancedSearch extends Component {
                   name="accomodation"
                   onChange={(e) => !this.props.handleChangecheck(e)}
                 />
-                <span className='span-cloche' onClick={this.props.handleClick}>
+                <div className='bell' onClick={this.props.handleClick}><span className='span-cloche'></span>
                   <i class="fas fa-bell" style={{ marginLeft: "20px"}}></i> Sauvegarder ma recherche
-                </span>
-
-
+                </div>
               </div>
             )
             : (
