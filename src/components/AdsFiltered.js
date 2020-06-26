@@ -16,7 +16,7 @@ const Ads = (props) => {
 
 
   useEffect(() => {
-    if (specialty && departement && duration && accomodation ) {
+    if (specialty && departement && duration && accomodation) {
       const unsubscribe = firebase
         .firestore()
         .collection("adds")
@@ -144,20 +144,20 @@ const Ads = (props) => {
       return () => unsubscribe();
     } else if (duration) {
       const unsubscribe = firebase
-      .firestore()
-      .collection("adds")
-      .where("duration", "==", duration)
-      .onSnapshot(handleSnapshot);
+        .firestore()
+        .collection("adds")
+        .where("duration", "==", duration)
+        .onSnapshot(handleSnapshot);
 
-    return () => unsubscribe();
+      return () => unsubscribe();
     } else if (accomodation) {
       const unsubscribe = firebase
-      .firestore()
-      .collection("adds")
-      .where("accomodation", "==", true)
-      .onSnapshot(handleSnapshot);
+        .firestore()
+        .collection("adds")
+        .where("accomodation", "==", true)
+        .onSnapshot(handleSnapshot);
 
-    return () => unsubscribe();
+      return () => unsubscribe();
     } else {
       const unsubscribe = firebase
         .firestore()
@@ -170,12 +170,12 @@ const Ads = (props) => {
 
   const handleSnapshot = (s) => {
     const data = s.docs
-    .map((ad) => {
-      return { id: ad.id, ...ad.data() };
-    })
+      .map((ad) => {
+        return { id: ad.id, ...ad.data() };
+      })
     if (data.length === 0) {
-      
-    } 
+
+    }
     setAds(data);
   }
   const checkDate = (ads) => {
@@ -190,16 +190,16 @@ const Ads = (props) => {
     <main>
       {ads.length === 0 ? (
         <div className="ads no-results">
-          <p>Aucun résultats pour votre recherche</p>
+          <p>Aucun résultat pour votre recherche</p>
           <Link to='/annonces' className='btn-new-search'>Nouvelle recherche</Link>
         </div>
       ) : (
-        <div className="ads ads-container">
-          {checkDate(ads).map((ad) => (
-            <AdsItemSmall key={ad.id} ad={ad} />
-          ))}
-        </div>
-      )}
+          <div className="ads ads-container">
+            {checkDate(ads).map((ad) => (
+              <AdsItemSmall key={ad.id} ad={ad} />
+            ))}
+          </div>
+        )}
     </main>
   );
 };

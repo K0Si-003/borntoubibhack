@@ -22,10 +22,6 @@ main {
   cursor: pointer;
 }
 
-.fa-bell {
-  margin-left: 10px !important;
-}
-
 footer {
   flex-shrink: 0;
 }
@@ -36,14 +32,13 @@ ul {
 
 a {
   text-decoration: none;
-  
 }
 
 @media screen and (max-width: 800px) {
   .bell {
     bottom: 5px !important;
     right: 0;
-    width: 100% !important;
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 1000px) {
