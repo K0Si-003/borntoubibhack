@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import firebase from '../firebase';
 import '../styles/AdsItem.css';
 import moment from 'moment';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
